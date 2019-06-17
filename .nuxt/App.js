@@ -6,9 +6,13 @@ import '..\\node_modules\\bootstrap-css-only\\css\\bootstrap.min.css'
 
 import '..\\node_modules\\mdbvue\\build\\css\\mdb.css'
 
+import _deef366a from '..\\layouts\\cardsSlot.vue'
+import _32924c18 from '..\\layouts\\CarousalSlot.vue'
+import _6dce0ecc from '..\\layouts\\column.vue'
 import _6f6c098b from '..\\layouts\\default.vue'
+import _77430317 from '..\\layouts\\empty.vue'
 
-const layouts = { "_default": _6f6c098b }
+const layouts = { "_cardsSlot": _deef366a,"_CarousalSlot": _32924c18,"_column": _6dce0ecc,"_default": _6f6c098b,"_empty": _77430317 }
 
 export default {
   head: {"title":"cslmis-mirco","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My geometric Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},

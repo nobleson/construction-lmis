@@ -1,5 +1,52 @@
 <template>
   <div class="wrapper">
+<header id="header" class="header">
+  <div class="top-header hidden-xs" style="background-color:black">
+      <div class="container clearfix">
+        <div class="contact-section float-right float-none-xs">
+          <span class="email-info">Email : <a href="mailto:apply2018@npvn.ng" >C-LMIS2019@corbon.gov.ng </a> </span>
+          </div>
+      </div>
+  </div>
+
+<div class="middle-header">
+<div class="middle-header hidden-xs" style="background-color:#008751">
+<mdb-container>
+        <mdb-row>
+            <mdb-col md="3" >
+                <div class="logo">
+                <img src="~/assets/images/corbon.png">
+                </div>
+            </mdb-col>
+            <mdb-col md="6">
+            <div class="bright" style="color:white">
+              <p>
+                <h5> Construction Labour Market Information System </h5>
+              <p/>
+              </div>
+            </mdb-col>
+            <mdb-col md="3">
+                <div class="logo1">
+                <img src="~/assets/images/new.png" width="80" height="80">
+                </div>
+            </mdb-col>
+        </mdb-row>
+    </mdb-container>
+  </div>
+	</div>
+</header>
+			<!--Header-->
+  <div class="search">
+      <div class="form-group has-search">
+        <span class="fa fa-search form-control-feedback"></span>
+        <input type="text" class="form-control" placeholder="Search">          
+  </div>
+  </div>
+
+<!-- ----Header Main------- -->
+<vue-navigation-bar style="background-color:#1C2331" :options="navbarOptions" />
+<!-- ----Header Main------- -->
+
 <div class="body">
   <mdb-row>
       <mdb-col md="9">
@@ -201,178 +248,8 @@
   <!-- Side column -->
         <mdb-col md="3">
           <div class="gradient">
-         <div class="side">
-        <mdb-card :class="['gradient-card', gradient4 && 'show']" @click.native="gradient4 = true" v-on-clickaway="away4">
-          <div class="d-flex d-inline-flex">
-            <div class="card-image" style="background-image: url()">
-              <a>
-                <mdb-mask waves class="text-black d-flex h-100 ">
-                  <div class="first-content align-self-center p-3" v-if="!gradient4">
-                    <h3 class="card-title font-weight-bold">Top Sites</h3>
-                    <p class="lead mb-0">Details</p>
-                  </div>
-                  <div class="second-content align-self-center mx-auto text-center" v-if="gradient4">
-                    <mdb-icon icon="chart-bar" size="3x" />
-                  </div>
-                </mdb-mask>
-              </a>
-            </div>
-            <!-- Data -->
-            <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-              <div class="third-content collapse-item mt-4 mb-2 mr-4 text-right justify-content-end ml-auto" v-if="gradient4">
-                <p class="text-uppercase text-muted">Top Sites Information</p>
-                <h4 class="font-weight-bold">2000</h4>
-              </div>
-            </transition>
-          </div>
-          <!-- Content -->
-          <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-            <mdb-card-body class="collapse-item" v-if="gradient4">
-              <mdb-progress color="cyan" :value="50" />
-              <p class="text-muted">Better than last week (50%)</p>
-              <h4 class="text-uppercase font-weight-bold my-4">Details</h4>
-              <p class="text-muted" align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam vel dolores qui, necessitatibus aut eaque magni mollitia tenetur molestiae sit quae quos quaerat amet exercitationem atque animi odio.</p>
-            </mdb-card-body>
-          </transition>
-        </mdb-card>
-        </div>
-        </div>
-        <div class="gradient">
-          <div class="side">
-              <mdb-card :class="['gradient-card', gradient5 && 'show']" @click.native="gradient5 = true" v-on-clickaway="away5">
-          <div class="d-flex d-inline-flex">
-            <div class="card-image" style="background-image: url()">
-              <a>
-                <mdb-mask waves class="text-black d-flex h-100 ">
-                  <div class="first-content align-self-center p-3" v-if="!gradient5">
-                    <h3 class="card-title font-weight-bold">Top Jobs</h3>
-                    <p class="lead mb-0">Top Jobs Highlite</p>
-                  </div>
-                  <div class="second-content align-self-center mx-auto text-center" v-if="gradient5">
-                    <mdb-icon icon="chart-pie" size="3x" />
-                  </div>
-                </mdb-mask>
-              </a>
-            </div>
-            <!-- Data -->
-            <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-              <div class="third-content collapse-item mt-4 mb-2 mr-4 text-right justify-content-end ml-auto" v-if="gradient5">
-                <p class="text-uppercase text-muted">Details</p>
-                <h4 class="font-weight-bold">20000</h4>
-              </div>
-            </transition>
-          </div>
-          <!-- Content -->
-          <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-            <mdb-card-body class="collapse-item" v-if="gradient5">
-              <mdb-progress color="amber" :value="75" />
-              <p class="text-muted">Worse than last week (75%)</p>
-              <h4 class="text-uppercase font-weight-bold my-4">Details</h4>
-              <p class="text-muted" align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam vel dolores qui, necessitatibus aut eaque magni mollitia tenetur molestiae sit quae quos quaerat amet exercitationem atque animi odio.</p>
-            </mdb-card-body>
-          </transition>
-        </mdb-card>
-    </div>
-</div>
-<div class="gradient">
-      <div class="side">
-        <mdb-card :class="['gradient-card', gradient6 && 'show']" @click.native="gradient6 = true" v-on-clickaway="away6">
-          <div class="d-flex d-inline-flex">
-            <div class="card-image" style="background-image: url('~/assets/images/corbon.png'),">
-              <a>
-                <mdb-mask waves class="text-black d-flex h-100 ">
-                  <div class="first-content align-self-center p-3" v-if="!gradient6">
-                    <h3 class="card-title font-weight-bold">Traning Providers</h3>
-                    <p class="lead mb-0">Details</p>
-                  </div>
-                  <div class="second-content align-self-center mx-auto text-center" v-if="gradient6">
-                    <mdb-icon icon="chart-bar" size="3x" />
-                  </div>
-                </mdb-mask>
-              </a>
-            </div>
-            <!-- Data -->
-            <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-              <div class="third-content collapse-item mt-4 mb-2 mr-4 text-right justify-content-end ml-auto" v-if="gradient6">
-                <p class="text-uppercase text-muted">Training providrrs Information </p>
-                <h4 class="font-weight-bold">2000</h4>
-              </div>
-            </transition>
-          </div>
-          <!-- Content -->
-          <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-            <mdb-card-body class="collapse-item" v-if="gradient6">
-              <mdb-progress color="cyan" :value="50" />
-              <p class="text-muted">Better than last week (50%)</p>
-              <h4 class="text-uppercase font-weight-bold my-4">Details</h4>
-              <p class="text-muted" align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam vel dolores qui, necessitatibus aut eaque magni mollitia tenetur molestiae sit quae quos quaerat amet exercitationem atque animi odio.</p>
-            </mdb-card-body>
-          </transition>
-        </mdb-card>
-        </div>
-</div>
-
-<div class="gradient">
-        <div class="side">
-        <mdb-card :class="['gradient-card', gradient2 && 'show']" @click.native="gradient2 = true" v-on-clickaway="away2">
-          <div class="d-flex d-inline-flex">
-            <div class="card-image"  style="background-image: url()">
-              <a>
-                <mdb-mask waves class="text-black d-flex h-100 " >
-                  <div class="first-content align-self-center p-3" v-if="!gradient2">
-                    <h3 class="card-title font-weight-bold">Artisans</h3>
-                    <p class="lead mb-0">Details</p>
-                  </div>
-                  <div class="second-content align-self-center mx-auto text-center" v-if="gradient2">
-                    <mdb-icon icon="chart-line" size="3x" />
-                  </div>
-                </mdb-mask>
-              </a>
-            </div>
-            <!-- Data -->
-            <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-              <div class="third-content collapse-item mt-4 mb-2 mr-4 text-right justify-content-end ml-auto" v-if="gradient2">
-                <p class="text-uppercase text-muted">Artisans Data Summary</p>
-                <h4 class="font-weight-bold">200</h4>
-              </div>
-            </transition>
-          </div>
-          <!-- Content -->
-          <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-            <mdb-card-body class="collapse-item" v-if="gradient2">
-              <mdb-progress color="purple" :value="25" />
-              <p class="text-muted">Worse than last week (25%)</p>
-              <h4 class="text-uppercase font-weight-bold my-4">Details</h4>
-              <p class="text-muted" align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam vel dolores qui, necessitatibus aut eaque magni mollitia tenetur molestiae sit quae quos quaerat amet exercitationem atque animi odio.</p>
-            </mdb-card-body>
-          </transition>
-        </mdb-card>
-    
-          </div>
-    </div>
-
-    <div class="gradient">
-      <div class="container">
-          <mdb-card>
-          <mdb-card-body>
-            <mdb-card-title>Place your Advert</mdb-card-title>
-            <mdb-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</mdb-card-text>
-          </mdb-card-body>
-        </mdb-card>
-        </div>
-      </div>
-
-      <div class="gradient">
-      <div class="container">
-          <mdb-card>
-          <mdb-card-body>
-            <mdb-card-title>Place your Advert</mdb-card-title>
-            <mdb-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</mdb-card-text>
-          </mdb-card-body>
-        </mdb-card>
-        </div>
-      </div>
-
+         <nuxt/>
+         </div>
   </mdb-col>
         
       </mdb-row>
@@ -385,7 +262,7 @@
     <mdb-carousel :interval="4000" show multi slide  :floating="true" >
       <mdb-carousel-item>
         <mdb-row>
-          <mdb-col md="3" class="mb-3">
+          <mdb-col md="4" class="mb-4">
           <mdb-card class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
             <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
               <div>
@@ -557,6 +434,63 @@
     </mdb-row>
     </div>
 </div>
+<back-to-top bottom="50px" right="50px">
+  <button type="button" class="btn btn-info btn-to-top"><i class="fa fa-chevron-up"></i></button>
+</back-to-top>
+
+ <mdb-footer color="stylish-color-dark" class="font-small pt-4 mt-4 ">
+            <div class="text-center text-md-left">
+                <mdb-row class="text-center text-md-left mt-3 pb-3">
+                    <mdb-col md="3" lg="3" xl="3" class="mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Construction Labour Market Information System</h6>
+                        <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </mdb-col>
+                    <hr class="w-100 clearfix d-md-none"/>
+                    <mdb-col md="2" lg="2" xl="2" class="mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+                        <p><a href="#!">MDBootstrap</a></p>
+                        <p><a href="#!">MDWordPress</a></p>
+                        <p><a href="#!">BrandFlow</a></p>
+                        <p><a href="#!">Bootstrap Angular</a></p>
+                    </mdb-col>
+                    <hr class="w-100 clearfix d-md-none"/>
+                    <mdb-col md="3" lg="2" xl="2" class="mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold"></h6>
+                        <p><a href="#!">Your Account</a></p>
+                        <p><a href="#!">Become an Affiliate</a></p>
+                        <p><a href="#!">Shipping Rates</a></p>
+                        <p><a href="#!">Help</a></p>
+                    </mdb-col>
+                    <hr class="w-100 clearfix d-md-none"/>
+                    <mdb-col md="4" lg="3" xl="3" class="mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                        <p><i class="fas fa-home mr-3"></i> Abuja, NY 10012, US</p>
+                        <p><i class="fas fa-envelope mr-3"></i> info@clmis.corbon.gov.ng</p>
+                        <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                        <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                    </mdb-col>
+                </mdb-row>
+                <hr/>
+                <mdb-container>
+                <mdb-row class="d-flex align-items-center">
+                    <mdb-col md="8" lg="8">
+                        <p class="text-center text-md-left grey-text">&copy; 2018 Copyright: <a href="https://www.clmis.corbon.gov.ng">C-LMIS</a></p>
+                    </mdb-col>
+                    <mdb-col md="4" lg="4" class="ml-lg-0">
+                        <div class="text-center text-md-right">
+                            <ul class="list-unstyled list-inline">
+                                <li class="list-inline-item"><a class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="list-inline-item"><a class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fab fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li class="list-inline-item"><a class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </mdb-col>
+                </mdb-row>
+                </mdb-container>
+            </div>
+        </mdb-footer>
+   
   </div>
 </template>
 <script>
@@ -573,7 +507,8 @@ import { mdbNavbar,mdbCarousel, mdbCarouselItem, mdbCarouselCaption,
         } from 'mdbvue';
 
 export default {
-  name: 'index',
+  name: 'headerMain',
+  layout:'headerMain',
   components: {
     mdbFooter,
     mdbContainer,
@@ -1051,35 +986,10 @@ export default {
 
                          {
                             type: 'link',
-                            text: 'Company',
-                            subMenuOptions: [
-                                {
-                                    type: 'link',
-                                    text: 'About',
-                                    subText: 'Stupid corporate wet blankets. Like booze ever killed anyone.',
-                                    path: './about',
-                                   
-                                },
-                                {
-                                    type: 'hr',
-                                },
-                                {
-                                    type: 'link',
-                                    text: 'Locations',
-                                    subText: 'You\'re a presentation tool!',
-                                    path: './locations',
-                                },
-                                {
-                                    type: 'hr',
-                                },
-                                {
-                                    type: 'link',
-                                    text: 'Blog',
-                                    subText: 'I enjoy having breakfast in bed. I like waking up to the smell of bacon. Sue me.',
-                                    path: './blog',
-                                },
-                            ]
+                            text: 'Advert',
+                            path: './Advert',
                         },
+
 
                          {
                             type: 'link',

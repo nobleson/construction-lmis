@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
+const _585146c4 = () => interopDefault(import('..\\pages\\Advert.vue' /* webpackChunkName: "pages_Advert" */))
+const _1187053d = () => interopDefault(import('..\\pages\\Company.vue' /* webpackChunkName: "pages_Company" */))
 const _52cfa932 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 
 Vue.use(Router)
@@ -79,6 +81,14 @@ export function createRouter() {
     scrollBehavior,
 
     routes: [{
+      path: "/Advert",
+      component: _585146c4,
+      name: "Advert"
+    }, {
+      path: "/Company",
+      component: _1187053d,
+      name: "Company"
+    }, {
       path: "/",
       component: _52cfa932,
       name: "index"
