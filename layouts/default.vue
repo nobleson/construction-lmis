@@ -182,7 +182,7 @@ export default {
 
                          {
                             type: 'link',
-                            text: 'Company',
+                            text: 'Menu',
                             subMenuOptions: [
                                 {
                                     type: 'link',
@@ -214,7 +214,7 @@ export default {
 
                          {
                             type: 'link',
-                            text: 'Company',
+                            text: 'Menu',     
                             subMenuOptions: [
                                 {
                                     type: 'link',
@@ -246,7 +246,7 @@ export default {
 
                          {
                             type: 'link',
-                            text: 'Company',
+                            text: 'Menu',
                             subMenuOptions: [
                                 {
                                     type: 'link',
@@ -278,7 +278,7 @@ export default {
 
                          {
                             type: 'link',
-                            text: 'Company',
+                            text: 'Menu',
                             subMenuOptions: [
                                 {
                                     type: 'link',
@@ -310,7 +310,7 @@ export default {
 
                         {
                             type: 'link',
-                            text: 'Company',
+                            text: 'Menu',
                             subMenuOptions: [
                                 {
                                     type: 'link',
@@ -366,7 +366,7 @@ export default {
                         },
                         {
                             type: 'link',
-                            text: 'Pricing',
+                           text: 'Menu',
                             path: './pricing',
                             iconRight: '<i class="fa fa-long-arrow-right fa-fw"></i>',
                         },
