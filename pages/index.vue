@@ -1051,7 +1051,39 @@ export default {
 
                          {
                             type: 'link',
-                            text: 'Company',
+                            text: 'Menu',
+                            subMenuOptions: [
+                                {
+                                    type: 'link',
+                                    text: 'About',
+                                    subText: 'Stupid corporate wet blankets. Like booze ever killed anyone.',
+                                    path: '#',
+                                   
+                                },
+                                {
+                                    type: 'hr',
+                                },
+                                {
+                                    type: 'link',
+                                    text: 'Locations',
+                                    subText: 'You\'re a presentation tool!',
+                                    path: './locations',
+                                },
+                                {
+                                    type: 'hr',
+                                },
+                                {
+                                    type: 'link',
+                                    text: 'Blog',
+                                    subText: 'I enjoy having breakfast in bed. I like waking up to the smell of bacon. Sue me.',
+                                    path: './blog',
+                                },
+                            ]
+                        },
+
+                         {
+                            type: 'link',
+                            text: 'Menu',
                             subMenuOptions: [
                                 {
                                     type: 'link',
@@ -1083,7 +1115,7 @@ export default {
 
                          {
                             type: 'link',
-                            text: 'Company',
+                            text: 'Menu',
                             subMenuOptions: [
                                 {
                                     type: 'link',
@@ -1115,7 +1147,7 @@ export default {
 
                          {
                             type: 'link',
-                            text: 'Company',
+                            text: 'Menu',
                             subMenuOptions: [
                                 {
                                     type: 'link',
@@ -1147,39 +1179,7 @@ export default {
 
                          {
                             type: 'link',
-                            text: 'Company',
-                            subMenuOptions: [
-                                {
-                                    type: 'link',
-                                    text: 'About',
-                                    subText: 'Stupid corporate wet blankets. Like booze ever killed anyone.',
-                                    path: './about',
-                                   
-                                },
-                                {
-                                    type: 'hr',
-                                },
-                                {
-                                    type: 'link',
-                                    text: 'Locations',
-                                    subText: 'You\'re a presentation tool!',
-                                    path: './locations',
-                                },
-                                {
-                                    type: 'hr',
-                                },
-                                {
-                                    type: 'link',
-                                    text: 'Blog',
-                                    subText: 'I enjoy having breakfast in bed. I like waking up to the smell of bacon. Sue me.',
-                                    path: './blog',
-                                },
-                            ]
-                        },
-
-                         {
-                            type: 'link',
-                            text: 'Company',
+                            text: 'Menu',
                             subMenuOptions: [
                                 {
                                     type: 'link',
@@ -1211,7 +1211,7 @@ export default {
 
                         {
                             type: 'link',
-                            text: 'Company',
+                            text: 'Menu',
                             subMenuOptions: [
                                 {
                                     type: 'link',
@@ -1267,7 +1267,7 @@ export default {
                         },
                         {
                             type: 'link',
-                            text: 'Pricing',
+                            text: 'Menu',
                             path: './pricing',
                             iconRight: '<i class="fa fa-long-arrow-right fa-fw"></i>',
                         },
