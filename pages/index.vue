@@ -17,24 +17,24 @@
     >
       <!-- Text slides with image -->
       <b-carousel-slide
-       caption="C-Lmis Implementaion Team"
+       caption="Corbon Head Office Abuja"
       >
         <img
           slot="img"
           class="d-block img-fluid w-100"
           width="1024"
           height="480"
-          src="~/assets/images/1.jpg"
+          src="~/assets/images/coffice.jpg"
           alt="image slot"
         >
          <p>
-         The construction Labour Market Imeplimentation Team 2019
+        Corbon Head Office Abuja
         </p>
       </b-carousel-slide>
 
       <!-- Slides with custom text -->
       <b-carousel-slide
-       caption="Corbon Head Office"
+       caption="C-Lmis Implementaion Team "
       >
         <img
           slot="img"
@@ -44,7 +44,9 @@
           src="~/assets/images/1.jpg"
           alt="image slot"
         >
-        <p>Corbon Head Office Abuja</p>
+        <p>
+           The construction Labour Market Imeplimentation Team 2019
+        </p>
       </b-carousel-slide>
 
       <!-- Slides with image only -->
