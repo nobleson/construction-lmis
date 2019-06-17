@@ -387,7 +387,7 @@
     <mdb-carousel :interval="4000" show multi slide  :floating="true" >
       <mdb-carousel-item>
         <mdb-row>
-          <mdb-col md="3" class="mb-3">
+          <mdb-col md="4" class="mb-4">
           <mdb-card class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
             <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
               <div>
