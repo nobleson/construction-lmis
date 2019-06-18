@@ -373,8 +373,7 @@ export default {
                     ],
                     
                 }
-            }
-            
+            }         
   },
   methods: {
   }
@@ -495,6 +494,7 @@ li {
   text-align: center;
   padding-top: 4%;
 }
+
 </style>
 
 

@@ -5,9 +5,9 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'vue-navigation-bar/dist/vue-navigation-bar.css'
 import VueNavigationBar from 'vue-navigation-bar'
 import BackToTop from 'vue-backtotop'
- 
+import responsive from 'vue-responsive'
+
+Vue.use(responsive) 
 Vue.use(BackToTop)
-
 Vue.component('vue-navigation-bar', VueNavigationBar)
-
 Vue.use(BootstrapVue)
