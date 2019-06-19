@@ -9,7 +9,6 @@
       </div>
   </div>
 
-<div class="middle-header">
 <div class="middle-header hidden-xs" style="background-color:#008751">
 <mdb-container>
         <mdb-row>
@@ -33,7 +32,6 @@
         </mdb-row>
     </mdb-container>
   </div>
-	</div>
 </header>
 			<!--Header-->
   <div class="search">
@@ -380,7 +378,7 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+<!-- Added "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .container{
   padding-top: 0.5%;
@@ -493,6 +491,14 @@ li {
   color:white;
   text-align: center;
   padding-top: 4%;
+}
+.middle-header{
+     padding: 5px;
+}
+@media screen and (max-width: 600px) {
+  .middle-header {
+    width: 100%;
+  }
 }
 
 </style>
