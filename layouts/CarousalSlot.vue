@@ -9,31 +9,22 @@
       </div>
   </div>
 
-<div class="middle-header">
-<div class="middle-header hidden-xs" style="background-color:#008751">
-<mdb-container>
-        <mdb-row>
-            <mdb-col md="3" >
-                <div class="logo">
-                <img src="~/assets/images/corbon.png">
-                </div>
-            </mdb-col>
-            <mdb-col md="6">
-            <div class="bright" style="color:white">
-              <p>
-                <h5> Construction Labour Market Information System </h5>
-              <p/>
-              </div>
-            </mdb-col>
-            <mdb-col md="3">
-                <div class="logo1">
-                <img src="~/assets/images/new.png" width="80" height="80">
-                </div>
-            </mdb-col>
-        </mdb-row>
-    </mdb-container>
-  </div>
-	</div>
+<b-navbar toggleable="lg" style="background-color:#008751">
+        <div class="container">
+        <b-navbar-brand href="#"> <img src="~/assets/images/new.png"  width="80" height="80"></b-navbar-brand>
+        <div class="top">
+            <p>
+                <h5>Construction Labour Market Information System</h5>
+            <p/>
+        </div>
+        <b-collapse id="nav-collapse" is-nav>
+            <!-- Right aligned nav items -->
+            <b-navbar-nav class="ml-auto">
+                <img src="~/assets/images/corbon.png" >
+            </b-navbar-nav>
+        </b-collapse>
+   </div>
+    </b-navbar>
 </header>
 			<!--Header-->
   <div class="search">
@@ -1490,6 +1481,18 @@ li {
   text-align: center;
   padding-top: 4%;
 }
+.top {
+    position: absolute;
+    display: block;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: white;
+}
+  .top {
+    padding-left: 6rem;
+}
+
 
 
 
