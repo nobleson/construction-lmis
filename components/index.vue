@@ -45,7 +45,7 @@
           alt="image slot"
         >
         <p>
-           The construction Labour Market Implimentation Team 2019
+           The construction Labour Market Imeplimentation Team 2019
         </p>
       </b-carousel-slide>
 
@@ -169,7 +169,7 @@
                 <mdb-mask waves class="text-black d-flex h-100 ">
                   <div class="first-content align-self-center p-3" v-if="!gradient7">
                     <h3 class="card-title font-weight-bold">Companies</h3>
-                    <p class="lead mb-0">Details</p>
+                    <p class="lead mb-0">Check Strenghts</p>
                   </div>
                   <div class="second-content align-self-center mx-auto text-center" v-if="gradient7">
                     <mdb-icon icon="chart-bar" size="3x" />
@@ -248,7 +248,7 @@
                 <mdb-mask waves class="text-black d-flex h-100 ">
                   <div class="first-content align-self-center p-3" v-if="!gradient5">
                     <h3 class="card-title font-weight-bold">Top Jobs</h3>
-                    <p class="lead mb-0">Details</p>
+                    <p class="lead mb-0">Top Jobs Highlite</p>
                   </div>
                   <div class="second-content align-self-center mx-auto text-center" v-if="gradient5">
                     <mdb-icon icon="chart-pie" size="3x" />
@@ -284,7 +284,7 @@
               <a>
                 <mdb-mask waves class="text-black d-flex h-100 ">
                   <div class="first-content align-self-center p-3" v-if="!gradient6">
-                    <h3 class="card-title font-weight-bold">Training Providers</h3>
+                    <h3 class="card-title font-weight-bold">Traning Providers</h3>
                     <p class="lead mb-0">Details</p>
                   </div>
                   <div class="second-content align-self-center mx-auto text-center" v-if="gradient6">
@@ -296,7 +296,7 @@
             <!-- Data -->
             <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
               <div class="third-content collapse-item mt-4 mb-2 mr-4 text-right justify-content-end ml-auto" v-if="gradient6">
-                <p class="text-uppercase text-muted">Training providers Information </p>
+                <p class="text-uppercase text-muted">Training providrrs Information </p>
                 <h4 class="font-weight-bold">2000</h4>
               </div>
             </transition>
@@ -384,40 +384,11 @@
  <!-- End to End carousal -->
  <div class="row">
  <div class="gradient">
-    <mdb-carousel :interval="5000" show multi slide  :floating="true" >
+    <mdb-carousel :interval="4000" show multi slide  :floating="true" >
       <mdb-carousel-item>
         <mdb-row>
-          <mdb-col md="3" class="mb-3">
+          <mdb-col md="4" class="mb-4">
           <mdb-card class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
-            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-              <div>
-                <h5 class="white-text"><mdb-icon icon="building" /> Licencing Body</h5>
-                <mdb-card-title tag="h3" class="pt-2"><strong>This is card title</strong></mdb-card-title>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                    optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-                    Odit sed qui, dolorum!.</p>
-                <mdb-btn color="white" icon="clone left"><mdb-icon  /> View project</mdb-btn>
-              </div>
-            </div>
-          </mdb-card>
-          </mdb-col>
-         
-          <mdb-col md="3" class="mb-3">
-            <mdb-card class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
-            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-              <div>
-                <h5 class="pink-text"><mdb-icon icon="chart-pie" /> Awarding Body</h5>
-                <mdb-card-title tag="h3" class="pt-2"><strong>This is card title</strong></mdb-card-title>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                    optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-                    Odit sed qui, dolorum!.</p>
-                <mdb-btn color="pink" icon="clone left"><mdb-icon  /> View project</mdb-btn>
-              </div>
-            </div>
-          </mdb-card>
-          </mdb-col>
-          <mdb-col md="3" class="mb-3">
-           <mdb-card class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
             <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
               <div>
                 <h5 class="pink-text"><mdb-icon icon="chart-pie" /> Marketing</h5>
@@ -430,7 +401,22 @@
             </div>
           </mdb-card>
           </mdb-col>
-          <mdb-col md="3" class="mb-3">
+         
+          <mdb-col md="4" class="mb-4">
+            <mdb-card class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
+            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+              <div>
+                <h5 class="pink-text"><mdb-icon icon="chart-pie" /> Marketing</h5>
+                <mdb-card-title tag="h3" class="pt-2"><strong>This is card title</strong></mdb-card-title>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
+                    optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
+                    Odit sed qui, dolorum!.</p>
+                <mdb-btn color="pink" icon="clone left"><mdb-icon  /> View project</mdb-btn>
+              </div>
+            </div>
+          </mdb-card>
+          </mdb-col>
+          <mdb-col md="4" class="mb-4">
            <mdb-card class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
             <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
               <div>
@@ -445,11 +431,10 @@
           </mdb-card>
           </mdb-col>
         </mdb-row>
-         
       </mdb-carousel-item>
       <mdb-carousel-item>
         <mdb-row>
-          <mdb-col md="3" class="mb-3">
+          <mdb-col md="4" class="mb-4">
             <mdb-card class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
             <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
               <div>
@@ -463,21 +448,7 @@
             </div>
           </mdb-card>
           </mdb-col>
-          <mdb-col md="3" class="mb-3">
-            <mdb-card class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
-            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-              <div>
-                <h5 class="pink-text"><mdb-icon icon="chart-pie" /> Marketing</h5>
-                <mdb-card-title tag="h3" class="pt-2"><strong>This is card title</strong></mdb-card-title>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                    optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-                    Odit sed qui, dolorum!.</p>
-                <mdb-btn color="pink" icon="clone left"><mdb-icon  /> View project</mdb-btn>
-              </div>
-            </div>
-          </mdb-card>
-          </mdb-col>
-          <mdb-col md="3" class="mb-3">
+          <mdb-col md="4" class="mb-4">
               <mdb-card class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
             <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
               <div>
@@ -491,7 +462,7 @@
             </div>
           </mdb-card>
           </mdb-col>
-          <mdb-col md="3" class="mb-3">
+          <mdb-col md="4" class="mb-4">
            <mdb-card class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
             <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
               <div>
@@ -509,7 +480,7 @@
       </mdb-carousel-item>
       <mdb-carousel-item>
         <mdb-row>
-          <mdb-col md="3" class="mb-3">
+          <mdb-col md="4" class="mb-4">
            <mdb-card class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
             <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
               <div>
@@ -523,22 +494,7 @@
             </div>
           </mdb-card>
           </mdb-col>
-          <mdb-col md="3" class="mb-3">
-            <mdb-card class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
-            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-              <div>
-                <h5 class="pink-text"><mdb-icon icon="chart-pie" /> Marketing</h5>
-                <mdb-card-title tag="h3" class="pt-2"><strong>This is card title</strong></mdb-card-title>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                    optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-                    Odit sed qui, dolorum!.</p>
-                <mdb-btn color="pink" icon="clone left"><mdb-icon  /> View project</mdb-btn>
-              </div>
-            </div>
-          </mdb-card>
-          </mdb-col>
-
-          <mdb-col md="3" class="mb-3">
+          <mdb-col md="4" class="mb-4">
             <mdb-card class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
             <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
               <div>
@@ -553,7 +509,7 @@
           </mdb-card>
           </mdb-col>
          
-          <mdb-col md="3" class="mb-3">
+          <mdb-col md="4" class="mb-4">
             <mdb-card class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
             <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
               <div>
