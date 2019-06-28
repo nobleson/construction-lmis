@@ -2,7 +2,8 @@
   <div class="wrapper">
 <div class="body">
   <mdb-row>
-      <mdb-col md="9">
+    
+  <mdb-col md="9" class="mb-4">
   <div class="gradient">
     <b-carousel
       id="carousel-1"
@@ -90,7 +91,7 @@
     </div>
   <div class="gradient">
     <mdb-row>
-      <mdb-col md="4" class="mb-4">
+      <mdb-col md="3" class="mb-4">
         <mdb-card :class="['gradient-card', gradient1 && 'show']" @click.native="gradient1 = true" v-on-clickaway="away1">
           <div class="d-flex d-inline-flex">
             <div class="card-image" style="background-image: url (' + require('./assets/images/new.png') + ')'}">
