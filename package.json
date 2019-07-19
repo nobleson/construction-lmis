@@ -36,7 +36,6 @@
     "vue2-touch-events": "^2.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9",
     "@vue/cli-service": "^3.4.0",
     "autoprefixer": "^8.3.0",
     "babel-core": "^6.22.1",
@@ -69,12 +68,13 @@
     "gulp-remove-code": "^3.0.4",
     "html-webpack-plugin": "^3.2.0",
     "http-proxy-middleware": "^0.18.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.18.9",
     "opn": "^5.3.0",
     "ora": "^2.0.0",
     "portfinder": "^1.0.13",
     "rimraf": "^2.6.0",
-    "sass-loader": "^7.0.1",
+    "sass-loader": "^7.1.0",
     "semver": "^5.3.0",
     "shelljs": "^0.8.1",
     "uglifyjs-webpack-plugin": "^2.0.1",
