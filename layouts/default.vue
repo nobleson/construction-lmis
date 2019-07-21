@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="fixedMenu">
       <header id="header" class="header">
-        <div class="top-header hidden-xs" style="background-color:#81c784">
+        <div class="top-header hidden-xs" style="background-color:#56b000">
             <div class="container clearfix">
               <div class="contact-section float-right float-none-xs text-decoration:none text-white">
                 <span class="email-info">Email : <a href="mailto:c-lmis2019@corbon.gov.ng" >c-lmis2019@corbon.gov.ng </a> </span>
@@ -46,7 +46,7 @@
              
  <div>
 
-  <b-navbar toggleable="lg" style="background-color:#81c784 " >
+  <b-navbar toggleable="lg" style="background-color:#56b000 " >
    
     <b-navbar-toggle target="nav">
         
@@ -56,7 +56,6 @@
         
         <b-nav-item class="active" :to="{ name: 'index'}">Home</b-nav-item>
         <b-nav-item :to="{ name: 'publication'}">Publication</b-nav-item>
-        <b-nav-item :to="{ name: 'articles'}">Articles</b-nav-item>
         <b-nav-item :to="{ name: 'trainingproviders'}">Training Providers</b-nav-item>
         <b-nav-item :to="{ name: 'publication'}">Next Menu</b-nav-item>
         <b-nav-item :to="{ name: 'trainingproviders'}">Companies</b-nav-item>
@@ -249,8 +248,14 @@ li:hover {
   background: #008751;
   cursor: pointer;
 }
+li:visited{
+   color:white;
+}
 li a {
   color: #2BBBAD;
+}
+a:link{
+  color:white;
 }
 
 li {
@@ -261,7 +266,6 @@ li {
  font-style:normal;
  font-variant-caps: all-small-caps;
  transition-duration: 0.7s;
-
 }
   .logo{
       padding-top: 1%;
@@ -292,7 +296,7 @@ li {
     color: white;
 }
 .float-left{
-  color:blue;
+  color:white;
   font-size: 15px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -314,6 +318,11 @@ p {
     width: 100%;
     height: 170px;
 }
+.a{
+  color:white;
+  text-decoration-color:none;
+}
+
 
 
 </style> 

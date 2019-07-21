@@ -56,7 +56,6 @@
         
         <b-nav-item class="active" :to="{ name: 'index'}">Home</b-nav-item>
         <b-nav-item :to="{ name: 'publication'}">Publication</b-nav-item>
-        <b-nav-item :to="{ name: 'articles'}">Articles</b-nav-item>
         <b-nav-item :to="{ name: 'trainingproviders'}">Training Providers</b-nav-item>
         <b-nav-item :to="{ name: 'publication'}">Next Menu</b-nav-item>
         <b-nav-item :to="{ name: 'trainingproviders'}">Companies</b-nav-item>
