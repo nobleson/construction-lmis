@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class=" wrapper justify-content-center">
 <div class="body">
   <mdb-row>
       <mdb-col md="9">

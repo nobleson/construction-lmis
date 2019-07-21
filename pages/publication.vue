@@ -6,8 +6,8 @@
 
 <script>
 
-import publicationview from '~/components/publication/publicationview'
-import publicationdetail from '~/components/publication/publicationdetail'
+import publicationview from '~/components/publication/publicationview.vue'
+import publicationdetail from '~/components/publication/publicationdetail.vue'
 export default {
   components: {
     publicationview,

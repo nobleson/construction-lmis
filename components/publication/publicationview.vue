@@ -207,7 +207,7 @@
           <a>
             <strong>Carine Fox</strong>
           </a>, 19/08/2018</p>
-        <mdb-btn color="success" size="md" class="waves-light ">Read more</mdb-btn>
+         <b-button variant="success"   @click="$emit('changeComponent',{component: 'publicationdetail', id: null})" class="">Read More</b-button>
       </mdb-col>
      
     </mdb-row>
