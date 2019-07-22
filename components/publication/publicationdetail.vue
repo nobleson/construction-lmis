@@ -1,7 +1,7 @@
 <template>
    <div class="container">
         <div class="row justify-content-center mt-3 ">
-        <div class="col-md-10 article " >
+        <div class="col-md-9 article " >
 
         <mdb-btn color="#56b000"  icon="file-pdf">Download</mdb-btn>
         
@@ -60,7 +60,7 @@ Hadoop and Spark are the two most famous frameworks for solving Big Data problem
 If you already have some knowledge of Big Data, splendid! If not, now is the time to start.</p>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="details">  
                     <img class="img-fluid " src="~/assets/images/artisan.png" width="100% mt-2" />
                
@@ -68,7 +68,7 @@ If you already have some knowledge of Big Data, splendid! If not, now is the tim
                     <strong>Title</strong>
                 </h5>
                 <h6 class="font-weight-bold mb-1">
-                    <strong>Publication Type</strong>
+                    <strong>Publication</strong>
                 </h6>
 
                 <h4 class="font-weight-bold mb-1">
@@ -76,13 +76,37 @@ If you already have some knowledge of Big Data, splendid! If not, now is the tim
                 </h4>
 
                    <p class="dark-grey-text">Nam libero tempore, it quo minus id quod maxime placeat facere
-                    </p>  
-            <mdb-icon fab icon="facebook-f" /> 
-            <mdb-icon fab icon="twitter" /> 
-            <mdb-icon fab icon="facebook-f" />
-            <mdb-icon fab icon="facebook-f" />                     
+                    </p> 
+
+                        <div>
+                            <ul class="list-unstyled list-inline">
+                                <li class="list-inline-item"><a class="btn-floating btn-sm rgba-green-slight mx-2"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="list-inline-item"><a class="btn-floating btn-sm rgba-green-slight mx-2"><i class="fab fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a class="btn-floating btn-sm rgba-green-slight mx-2"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li class="list-inline-item"><a class="btn-floating btn-sm rgba-green-slight mx-2"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>                      
 
             </div>
+
+           <b-card class="mt-5">
+               <b-card-title><h4 class="font-weight-bold"> Other Posts</h4> </b-card-title>
+               <hr/>
+                <div class="details ">
+                    <ul class="font-weight-bold">
+                        <li><a href="#">Buliding serena lime line</a></li>
+                        <br>
+                        <li><a href="#">Buliding serena lime line</a></li>
+                         <br>
+                        <li><a href="#">Buliding serena lime line</a></li>
+                         <br>
+                        <li><a href="#">Buliding serena lime line</a></li>
+                         <br>
+                        <li><a href="#">Buliding serena lime line</a></li>
+                    </ul>
+
+            </div>
+               </b-card>
 
                     
             </div>
@@ -90,11 +114,12 @@ If you already have some knowledge of Big Data, splendid! If not, now is the tim
    </div>
 </template>
 <script>
-import {mdbBtn, mdbCard,  mdbIcon, mdbListGroup, mdbListGroupItem} from 'mdbvue'
+import {mdbBtn, mdbCard,  mdbIcon, mdbListGroup, mdbListGroupItem, mdbCardTitle} from 'mdbvue'
 export default {
     components:{
         mdbBtn,
-          mdbCard,
+        mdbCard,
+        mdbCardTitle,
       mdbListGroup,
       mdbListGroupItem,
       mdbIcon
@@ -104,6 +129,10 @@ export default {
 <style>
 .article{
    border-right: 1px solid #56b000;
+}
+ul {
+  list-style-type: none;
+  font-size: 15px;
 }
 
 .gradient{

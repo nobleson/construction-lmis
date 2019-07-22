@@ -1,7 +1,7 @@
 <template>
  <section class="mt-2">
    <div class="row">
-  <div class="col-s-9">
+  <div class="col-s-6">
 <section>
    <mdb-col>
         <b-carousel
@@ -213,7 +213,7 @@
     
  <section>
       <mdb-row>
-         <mdb-col xl="3" md="6" class="mb-3">
+         <mdb-col xl="3" md="3" class="mb-3">
           <div class="container">
             <mdb-polar-chart :data="polarChartData" :options="polarChartOptions" :width="300" :height="200"/>
             <hr>
@@ -226,7 +226,7 @@
           </mdb-container>
         </mdb-col>
         
-         <mdb-col xl="3" md="6" class="mb-3">
+         <mdb-col xl="3" md="3" class="mb-3">
           <div class="container">
         <mdb-polar-chart :data="polarChartData" :options="polarChartOptions" :width="300" :height="200"/>
           <hr>
@@ -239,7 +239,102 @@
 
     <!--- side column--->
       
-         
+   <mdb-col md="3" class="post">
+        
+          <h3 class="font-weight-bold"> Trending Publications</h3>
+          <div>
+           <b-link to="publication">
+              <mdb-media>
+                <mdb-media-body>
+                  <h5 class="mt-0 font-weight-bold">Media heading</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+                  congue felis in faucibus.
+                </mdb-media-body>
+              </mdb-media>
+           </b-link>
+          
+          </div>
+          <br/>
+         <div class="mt-1">
+               <div>
+             <mdb-media>
+                <mdb-media-body>
+                  <h5 class="mt-0 font-weight-bold">Media heading</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+                  congue felis in faucibus.
+                </mdb-media-body>
+              </mdb-media>
+          </div>
+          
+          
+            </div>
+
+            <div class="mt-2">
+               <div>
+             <mdb-media>
+                <mdb-media-body>
+                  <h5 class="mt-0 font-weight-bold">Media heading</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+                  congue felis in faucibus.
+                </mdb-media-body>
+              </mdb-media>
+          </div>
+          
+            </div>
+        
+        <b-card class="mt-3">
+          <h6 class="font-weight-bold">Related Post</h6>
+          <div>
+        <b-link to="publication">
+              <mdb-media>
+                <mdb-media-body>
+                  <h5 class="mt-0 font-weight-bold">Media heading</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+                  congue felis in faucibus.
+                </mdb-media-body>
+              </mdb-media>
+           </b-link>
+          </div>
+          <br/>
+         <div class="mt-3">
+               <div>
+             <mdb-media>
+                <mdb-media-body>
+                  <h5 class="mt-0 font-weight-bold">Media heading</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+                  congue felis in faucibus.
+                </mdb-media-body>
+              </mdb-media>
+          </div>
+          
+          
+            </div>
+
+            <div class="mt-3">
+               <div>
+             <mdb-media>
+                <mdb-media-body>
+                  <h5 class="mt-0 font-weight-bold">Media heading</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+                  congue felis in faucibus.
+                </mdb-media-body>
+              </mdb-media>
+          </div>
+          
+            </div>
+        
+        </b-card>
+    
+      
+        </mdb-col>
+
+
     <mdb-col md="3" class="mb-3">
 
       <div class="aside">
@@ -495,27 +590,6 @@
         </mdb-card>
         </div>
         </div> 
-
-        
-       
-       <mdb-card class=" mt-3" style="background-color:#56b000;">
-          <div id="slider" class="slider" @mouseMove="mouseMoving">
-          <div class="slider-cards">
-            <div @mouseDown="startDrag"
-                @mouseUp="stopDrag"
-                v-for="(slide, index) in slides" 
-                :key="index"
-                class="slider-card">
-              <img :src="slide.image" :alt="slide.title" draggable="true">
-            </div>
-          </div>
-          <div class="slider-info">
-            <h1> {{selectedSlide.title}}</h1>
-            <p>{{selectedSlide.description}}</p>
-            <button class="slider-button">More details</button>
-          </div>
-        </div>
-       </mdb-card>
       
         </div>
 
@@ -526,15 +600,6 @@
 
 </template>
 <script>
-import {TweenMax, Power2, TimelineLite} from "gsap/TweenMax";
- 
-//or get to the parts that aren't included inside TweenMax:
-import Draggable from "gsap/Draggable";
-import ScrollToPlugin from "gsap/ScrollToPlugin";
- const plugins = [CSSPlugin, ScrollToPlugin]; 
-//or, as of 2.0, all tools are exported from the "all" file (excluding bonus plugins):
-import {CSSPlugin, Elastic} from "gsap/all";
-//if tree shaking dumps plugins, just reference them somewhere in your code like:
 
 import { mixin as clickaway } from 'vue-clickaway';
 import { mdbFooter, mdbContainer, mdbRow, mdbCol,} from 'mdbvue';
@@ -542,7 +607,7 @@ import { mdbNavbar,mdbCarousel, mdbCarouselItem, mdbCarouselCaption,
           mdbNavItem, mdbNavbarNav, mdbNavbarToggler, mdbInput, 
           mdbBtn, waves, mdbCard,  mdbCardImage, mdbCardHeader, 
           mdbCardBody, mdbCardTitle, mdbCardText, mdbCardFooter, mdbCardUp, 
-          mdbCardAvatar, mdbCardGroup, mdbView, mdbMask, mdbIcon, mdbTooltip,
+          mdbCardAvatar, mdbCardGroup, mdbView,  mdbMedia, mdbMediaBody, mdbMask, mdbIcon, mdbTooltip,
           mdbLineChart, mdbTabPane, mdbProgress, mdbTbl, mdbTab, mdbTabItem, mdbTabContent, mdbMasonry,
           mdbMasonryItem, mdbRadarChart, mdbBarChart, mdbPolarChart, mdbPieChart, mdbDoughnutChart, mdbScatterChart, mdbBubbleChart,
           mdbHorizontalBarChart
@@ -551,6 +616,8 @@ import { mdbNavbar,mdbCarousel, mdbCarouselItem, mdbCarouselCaption,
 export default {
   name: 'index',
   components: {
+    mdbMedia,
+    mdbMediaBody,
     mdbFooter,
     mdbContainer,
     mdbRow,
@@ -601,29 +668,7 @@ export default {
   data() {
     return {
       
-    slides: [
-      {
-        title: 'Ready Player One',
-        description: 'When the creator of a popular video game system dies, a virtual contest is created to compete for his fortune.',
-        image: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/pU1ULUq8D3iRxl1fdX2lZIzdHuI.jpg'
-      },
-      {
-        title: 'Avengers: Infinity War',
-        description: 'As the Avengers and their allies have continued to protect the world from threats too large for any...',
-        image: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg'
-      },
-      {
-        title: 'Coco',
-        description: 'Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician...',
-        image: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg'
-      }
-    ],
-
-    selectedIndex: 0,
-    dragging: false,
-    initialMouseX: 0,
-    initialCardsX: 0,
-    cardsX: 0,
+   
 
       slide:0,
       slide:null,
@@ -724,35 +769,9 @@ export default {
         
   },
     
-     computed: {
-    selectedSlide () {
-      return this.slides[this.selectedIndex]
-    }
-  },
+
 
   methods: {
-
-startDrag (e) {
-      this.dragging = true
-      this.initialMouseX = e.pageX
-      this.initialCardsX = this.cardsX
-    },
-    stopDrag () {
-      this.dragging = false
-
-      const cardWidth = 290
-      const nearestSlide = -Math.round(this.cardsX / cardWidth)
-      this.selectedIndex = Math.min(Math.max(0, nearestSlide), this.slides.length -1)
-      TweenLite.to(this, 0.3, {cardsX: -this.selectedIndex * cardWidth})
-    },
-    mouseMoving (e) {
-      if(this.dragging) {
-        const dragAmount = e.pageX - this.initialMouseX
-        const targetX = this.initialCardsX + dragAmount
-        this.cardsX = targetX
-      }
-    },
-
     changeCurrentComponent(newComponent) {
       this.currentComponent = newComponent;
     },
@@ -954,8 +973,8 @@ li a {
 }
 
 li {
-  color: #fff;
-  background: #00695C;
+  
+  background: rgb(29, 240, 110);
   display: block;
   float: left;
   padding: 1rem;
@@ -973,9 +992,7 @@ li {
       padding-top: 1%;
       padding-bottom: 2%;
   }
-h5{
-  color:red;
-}
+
 .bright{
   color:white;
   text-align: center;

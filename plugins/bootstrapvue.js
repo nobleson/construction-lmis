@@ -7,9 +7,9 @@ import VueNavigationBar from 'vue-navigation-bar'
 import BackToTop from 'vue-backtotop'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
+import Vuex from 'vuex'
 
-
-
+Vue.use(Vuex)
 Vue.use(VueMaterial)
 Vue.use(BackToTop)
 Vue.component('vue-navigation-bar', VueNavigationBar)
