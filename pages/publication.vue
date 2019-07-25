@@ -6,17 +6,17 @@
 
 <script>
 
-import publicationview from '~/components/publication/publicationview.vue'
-import publicationdetail from '~/components/publication/publicationdetail.vue'
+import publicationView from '~/components/publication/publicationView.vue'
+import publicationDetail from '~/components/publication/publicationDetail.vue'
 export default {
   components: {
-    publicationview,
-    publicationdetail,
+    publicationView,
+    publicationDetail,
     
   },
   data() {
     return {
-      currentComponent: 'publicationview',
+      currentComponent: 'publicationView',
       currentpublicationData: null
     }
   },

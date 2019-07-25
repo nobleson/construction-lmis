@@ -34,16 +34,7 @@
 <div class="spacer">
     &nbsp;
 </div>
-			<!--Header-->
-  <div class="search">
-      <div class="form-group has-search">
-        <span class="fa fa-search form-control-feedback"></span>
-        <input type="text" class="form-control" placeholder="Search">          
-  </div>
-  </div> 
-
-<!-- ----Header Main------- -->
-             
+		
  <div>
 
   <b-navbar toggleable="lg" style="background-color:#56b000 " >
@@ -52,27 +43,28 @@
         
     </b-navbar-toggle>
      <b-collapse id="nav" is-nav>
-    <b-navbar-nav class="ml-auto" color="white">
+    <b-navbar-nav class="ml-auto"  >
         
-        <b-nav-item class="active" :to="{ name: 'index'}">Home</b-nav-item>
-        <b-nav-item :to="{ name: 'publication'}">Publication</b-nav-item>
-        <b-nav-item :to="{ name: 'trainingproviders'}">Training Providers</b-nav-item>
-        <b-nav-item :to="{ name: 'publication'}">Next Menu</b-nav-item>
-        <b-nav-item :to="{ name: 'trainingproviders'}">Companies</b-nav-item>
+        <b-nav-item  ></b-nav-item>
+        <b-nav-item class="active" :to="{ name: 'index'}" ><span class="text-white">Home</span></b-nav-item>
+        <b-nav-item :to="{ name: 'publication'}" ><span class="text-white">Publication</span></b-nav-item>
+        <b-nav-item :to="{ name: 'provider'}" ><span class="text-white">Provider</span></b-nav-item>
   
-        <b-nav-item-dropdown text="Company" right>
-          <b-dropdown-item :to="{ name: 'trainingproviders'}">Company Info</b-dropdown-item>
+        
+         
+          <b-nav-item-dropdown  right>
+             <template slot="button-content"><span class="text-white">Company</span></template>
               <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item href="#">EShjjjjjjjjjjjjjh-----jjjjjfsjfsfsfjhsfhj</b-dropdown-item>
+          <b-dropdown-item href="#" >EShjjjjjjjjjjjjjh-----jjhj</b-dropdown-item>
               <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item href="#">EShjjjjjjjjjjjjjhjj----jjjfsjfsfsfjhsfhj</b-dropdown-item>
+          <b-dropdown-item href="#">EShjjjjjjjjjjjjjhjj----jjhj</b-dropdown-item>
               <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item href="#">EShjjjjjjjjjjjjjhjj----jjjfsjfsfsfjhsfhjFA</b-dropdown-item>
+          <b-dropdown-item href="#">EShjjjjjjjjjjjjjhjj----jjFA</b-dropdown-item>
         </b-nav-item-dropdown>
 
         <b-nav-item-dropdown right>
           <!-- Using 'button-content' slot -->
-          <template slot="button-content">Training Providers</template>
+          <template slot="button-content"><span class="text-white">Other Menu</span></template>
               <b-dropdown-divider></b-dropdown-divider>
           <b-dropdown-item href="#">EShjjjjjjjjjjjjjhjjjjjfsjfsfsfjhsfhjFA</b-dropdown-item>
               <b-dropdown-divider></b-dropdown-divider>
@@ -92,44 +84,59 @@
   <button type="button" class="btn btn-info btn-to-top"><i class="fa fa-chevron-up"></i></button>
 </back-to-top>
 
- <mdb-footer color="stylish-color-dark" class="font-small pt-4 mt-4 ">
-            <div class="text-center text-md-left">
-                <mdb-row class="text-center text-md-left mt-3 pb-3">
-                    <mdb-col md="3" lg="3" xl="3" class="mx-auto mt-3">
+  <mdb-footer style="background-color:#263238" class="page-footer font-small pt-0">
+            <div style="background-color:#263238">
+                <mdb-container class="text-left">
+                    <mdb-row class="py-4 d-flex align-items-center">
+                        <mdb-col md="6" lg="5" class="text-center text-md-left mb-4 mb-md-0">
+                            <h6 class="mb-0 white-text">Subscribe to our Newsletter for updates</h6>
+                        </mdb-col>
+                        <mdb-col md="6" lg="7" class="text-center text-md-right">
+                          <div class="subscribe">
+                          <form>
+                            <input type="email" placeholder="Your email address">
+                            <input type="submit" value="Subscribe" style="background-color:#56b000">
+                          </form>
+                        </div>
+                        </mdb-col>
+                    </mdb-row>
+                </mdb-container>
+            </div>
+        <div >
+                <mdb-row class="mt-3 justify-content-center" >
+                    <mdb-col md="3" lg="4" xl="3" class="mb-4">
+                        <h6 class="text-uppercase font-weight-bold"><strong>C-LMIS</strong></h6>
+                        <hr class="green accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px"/>
+                      
                         <h6 class="text-uppercase mb-4 font-weight-bold">CONSTRUCTION LABOUR MARKET INFORMATIOM SYSTEM</h6>
+                
                     </mdb-col>
-                    <hr class="w-100 clearfix d-md-none"/>
-                    <mdb-col md="2" lg="2" xl="2" class="mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+                    <mdb-col md="2" lg="2" xl="2" class="mb-4">
+                        <h6 class="text-uppercase font-weight-bold"><strong>Products</strong></h6>
+                        <hr class="green accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px"/>
                         <p><a href="#!">MDBootstrap</a></p>
                         <p><a href="#!">MDWordPress</a></p>
                         <p><a href="#!">BrandFlow</a></p>
                         <p><a href="#!">Bootstrap Angular</a></p>
                     </mdb-col>
-                    <hr class="w-100 clearfix d-md-none"/>
-                    <mdb-col md="3" lg="2" xl="2" class="mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold"></h6>
+                    <mdb-col md="3" lg="2" xl="2" class="mb-4">
+                        <h6 class="text-uppercase font-weight-bold"><strong>Useful links</strong></h6>
+                        <hr class="green accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px"/>
                         <p><a href="#!">Your Account</a></p>
                         <p><a href="#!">Become an Affiliate</a></p>
                         <p><a href="#!">Shipping Rates</a></p>
                         <p><a href="#!">Help</a></p>
                     </mdb-col>
-                    <hr class="w-100 clearfix d-md-none"/>
-                    <mdb-col md="4" lg="3" xl="3" class="mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                    <mdb-col md="4" lg="3" xl="3" class="mb-4">
+                        <h6 class="text-uppercase font-weight-bold"><strong>Contact</strong></h6>
+                        <hr class="green accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px"/>
                         <p><i class="fas fa-home mr-3"></i> Abuja, NY 10012, US</p>
                         <p><i class="fas fa-envelope mr-3"></i> info@clmis.corbon.gov.ng</p>
                         <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
                         <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
                     </mdb-col>
                 </mdb-row>
-                <hr/>
-                <mdb-container>
-                <mdb-row class="d-flex align-items-center">
-                    <mdb-col md="8" lg="8">
-                        <p class="text-center text-md-left grey-text">&copy; 2018 Copyright: <a href="https://www.clmis.corbon.gov.ng">C-LMIS</a></p>
-                    </mdb-col>
-                    <mdb-col md="4" lg="4" class="ml-lg-0">
+                 <mdb-col md="4" lg="4" class="ml-lg-0">
                         <div class="text-center text-md-right">
                             <ul class="list-unstyled list-inline">
                                 <li class="list-inline-item"><a class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fab fa-facebook-f"></i></a></li>
@@ -139,7 +146,11 @@
                             </ul>
                         </div>
                     </mdb-col>
-                </mdb-row>
+            </div>
+            <div class="footer-copyright text-center py-3">
+    
+                <mdb-container fluid>
+                    &copy; 2019 Copyright: <a href="https://www.c-lmis.corbon.gov.ng" class="font-weight-bold">c-lmis.corbon.gov.ng </a>
                 </mdb-container>
             </div>
         </mdb-footer>
@@ -169,6 +180,29 @@ export default {
 
 <!-- Added "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.active{
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.mb-4{
+  font-size: 18px;
+}
+.mb-0{
+  font-size: 20px;
+}
+input[type=submit] {
+    width: 32%;
+    padding: 10px 15px;
+    font-size: 21px;
+    color:aliceblue;
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 5px 5px;
+    
+}
+input[type=email] {
+    width: 40%;
+    padding: 10px 15px;
+    margin: 5px 5px; 
+}
 .container{
   padding-top: 0.5%;
 }
@@ -222,49 +256,33 @@ h4 {
 .card.chart-card .classic-tabs .nav.tabs-white li a.active {
   color: #673ab7;
 }
-
-.search {
-    width: 60%;
-    margin: 15px auto;
-}
-.has-search .form-control-feedback {
-    position: absolute;
-    display: block;
-    width: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #007851;
-}
-  .has-search .form-control {
-    padding-left: 2.375rem;
-}
-
 .wrapper {
    overflow-x: hidden;
  }
 
 li:hover {
   background: #008751;
+  color: white;
   cursor: pointer;
+
+}
+a:active {
+    color: blue;
 }
 li:visited{
    color:white;
 }
-li a {
-  color: #2BBBAD;
-}
+
 a:link{
   color:white;
 }
-
+ul{
+  color:white;
+}
 li {
- color: #64dd17;
  position: relative;
  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
- font-size:18px;
- font-style:normal;
- font-variant-caps: all-small-caps;
+ font-size:20px;
  transition-duration: 0.7s;
 }
   .logo{
@@ -282,10 +300,7 @@ li {
   text-align: center;
   padding-top: 4%;
 }
-.search {
-    width: 60%;
-    margin: 15px auto;
-}
+
 .top {
     position: absolute;
     display: block;
@@ -316,7 +331,7 @@ p {
 .spacer
 {
     width: 100%;
-    height: 170px;
+    height: 157px;
 }
 .a{
   color:white;

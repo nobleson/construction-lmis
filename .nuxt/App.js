@@ -15,7 +15,7 @@ import _77430317 from '..\\layouts\\empty.vue'
 const layouts = { "_cardsSlot": _deef366a,"_carouselSlot": _2f9a5a74,"_column": _6dce0ecc,"_default": _6f6c098b,"_empty": _77430317 }
 
 export default {
-  head: {"title":"cslmis-mirco","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My geometric Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+  head: {"title":"cslmis-mirco","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My geometric Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Lato:400,700"}],"style":[],"script":[]},
 
   render(h, props) {
     const loadingEl = h('NuxtLoading', { ref: 'loading' })

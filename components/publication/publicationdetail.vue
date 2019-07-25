@@ -3,110 +3,104 @@
         <div class="row justify-content-center mt-3 ">
         <div class="col-md-9 article " >
 
-        <mdb-btn color="#56b000"  icon="file-pdf">Download</mdb-btn>
-        
-              <h6 class=" date mt-5 float-right">Last Update </h6>
+       
+            <div class="row">
             <div class="subtitle mt-5">
-                   <strong>Trending Technologies</strong>
-                   <hr/>
+                <h1>{{publicationData.title}}</h1>
+                  <hr/>
             </div>
-            <p class="date">Date Created </p>  
+             <img :src="publicationData.coverpage" width="800" class="img-fluid"/>
+           
+            </div>
+             
+            <div class="row">
+                <div class="col-md-2 mt-5">
+                    <div >
+
+                        <p><strong>Author</strong></p>
+                        <p>{{publicationData.author}}</p>
+                       <hr style="border-top: dotted 1px;" />
+
+                        <p>Date Created</p>
+                        <p>{{publicationData.dateCreated}}</p>
+                       <hr style="border-top: dotted 1px;" />
+
+                        <p><strong>Date Published</strong></p>
+                        <p>{{publicationData.datePublished}}</p>
+                        
+                      <hr style="border-top: dotted 1px;" />
+
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-md-10 mt-3">
+                         <div class="content mt-3" v-html="publicationData.authorExcerpt"> 
+                             
+                        </div>
+                        </div>
+            </div>
               
-           <p class="content mt-3"> 
-               
-               Top 10 Trending Technologies
-Change is the only constant. This applies in your professional life as well. Up-scaling yourself is a need nowadays, the reason is pretty simple, technology is evolving very quickly. I have listed top 10 trending technologies, which is expected to acquire a huge market in 2019.
-
-Edureka 2019 Tech Career Guide is out! Hottest job roles, precise learning paths, industry outlook & more in the guide. Download now.
-So, let’s make a new year resolution to master any one of the below technologies:
-
-Powered by Edureka Mock Interview
-80% INTERVIEW REJECTIONS HAPPEN IN FIRST 90 SECONDS
-Take Mock Interview
-Get Interviewed by Industry Experts Personalized interview feedback
-Artificial Intelligence
-Blockchain
-Augmented Reality and Virtual Reality
-Cloud Computing
-Angular and React
-DevOps
-Internet of Things (IoT)
-Intelligent Apps (I – Apps)
-Big Data
-RPA (Robotic Process Automation)
-So, the countdown begins from here.
-
-10) RPA (Robotic Process Automation):
-RPA Training – Explore the Curriculum to Master RPA.
-
-Generally, any desk job in any industry involves tasks that are repetitive in nature and can be automated.
-RPA or Robotic Process Automation allows you to automate such routine and repetitive tasks. 
-You don’t need to write any code to automate repetitive tasks.
-In 2019, the trend of bots and machine learning is only going to skyrocket, which means RPA will become an invaluable skill to have.
-
-Robotic Process Automation - Top 10 Trending Technologies - Edureka
-9) Big Data:
-Big Data and Hadoop Training – Explore the Curriculum to Master Big Data and Hadoop.
-
-Big data refers to problems that are associated with processing and storing different types of data. Most of the companies today, rely on big data analytics to gain huge insight about their:
-
-customer,
-product research,
-marketing initiatives and many more.
-For your surprise, big data led Germany to win the world cup.
-
-Hadoop and Spark are the two most famous frameworks for solving Big Data problems.
-
-If you already have some knowledge of Big Data, splendid! If not, now is the time to start.</p>
+          
             </div>
 
             <div class="col-md-3">
-                <div class="details">  
-                    <img class="img-fluid " src="~/assets/images/artisan.png" width="100% mt-2" />
+
+
+            <b-card class=" mt-5">
+               <b-card-title><h4 class="font-weight-bold">Newsletter</h4> </b-card-title>
+
+               <hr style="border-top: dotted 1px;" />
+                Subscribe to c-lmis to get the must-read publications & insights in your inbox.
+                <b-card-body>
+                    
+                <mdb-input label="Your Email" v-model="value" />
+                <mdb-btn  class="text-white text-center" color="light-green"  >Subscribe</mdb-btn>            
+                </b-card-body>
+                 <hr style="border-top: dotted 1px;" /> 
+            
+               </b-card>
+
+                <div class="details mt-5"> 
+                <hr style="border-top: dotted 1px;" /> 
+                    <img class="img-fluid " :src="publicationData.authorProfilePhoto" width="100% mt-2" />
                
+                 <hr style="border-top: dotted 1px;" />
+
                 <h5 class="font-weight-bold mb-1">
-                    <strong>Title</strong>
+                    <strong>{{publicationData.title}}</strong>
                 </h5>
                 <h6 class="font-weight-bold mb-1">
-                    <strong>Publication</strong>
+                    <strong>{{publicationData.title}}</strong>
                 </h6>
 
-                <h4 class="font-weight-bold mb-1">
-                    <strong>Author</strong>
-                </h4>
 
-                   <p class="dark-grey-text">Nam libero tempore, it quo minus id quod maxime placeat facere
+                   <p class="dark-grey-text">
+                       {{publicationData.type}}
                     </p> 
+
+                    <mdb-btn class="text-white" color="light-green" icon="cart-arrow-down"> Buy Document</mdb-btn>
+
+                      <hr style="border-top: dotted 1px;" />
 
                         <div>
                             <ul class="list-unstyled list-inline">
-                                <li class="list-inline-item"><a class="btn-floating btn-sm rgba-green-slight mx-2"><i class="fab fa-facebook-f"></i></a></li>
-                                <li class="list-inline-item"><a class="btn-floating btn-sm rgba-green-slight mx-2"><i class="fab fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a class="btn-floating btn-sm rgba-green-slight mx-2"><i class="fab fa-google-plus-g"></i></a></li>
-                                <li class="list-inline-item"><a class="btn-floating btn-sm rgba-green-slight mx-2"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li class="list-inline-item"><a class="btn-floating btn-sm rgba-green-slight mx-2"><i class="fab fa-facebook-f fa-2x"></i></a></li>
+                                <li class="list-inline-item"><a class="btn-floating btn-sm rgba-green-slight mx-2"><i class="fab fa-twitter fa-2x" ></i></a></li>
+                        
                             </ul>
                         </div>                      
 
             </div>
 
-           <b-card class="mt-5">
-               <b-card-title><h4 class="font-weight-bold"> Other Posts</h4> </b-card-title>
-               <hr/>
-                <div class="details ">
+              
+                <div class="details mt-4">
                     <ul class="font-weight-bold">
-                        <li><a href="#">Buliding serena lime line</a></li>
-                        <br>
-                        <li><a href="#">Buliding serena lime line</a></li>
-                         <br>
-                        <li><a href="#">Buliding serena lime line</a></li>
-                         <br>
-                        <li><a href="#">Buliding serena lime line</a></li>
-                         <br>
-                        <li><a href="#">Buliding serena lime line</a></li>
+                       <!-- <li><a href="#">Buliding serena lime line</a></li> -->
+                       
                     </ul>
 
             </div>
-               </b-card>
 
                     
             </div>
@@ -114,16 +108,18 @@ If you already have some knowledge of Big Data, splendid! If not, now is the tim
    </div>
 </template>
 <script>
-import {mdbBtn, mdbCard,  mdbIcon, mdbListGroup, mdbListGroupItem, mdbCardTitle} from 'mdbvue'
+import {mdbBtn, mdbCard,  mdbInput, mdbIcon, mdbListGroup, mdbListGroupItem, mdbCardTitle} from 'mdbvue'
 export default {
     components:{
         mdbBtn,
         mdbCard,
         mdbCardTitle,
-      mdbListGroup,
-      mdbListGroupItem,
-      mdbIcon
-    }
+        mdbListGroup,
+        mdbListGroupItem,
+        mdbInput,
+        mdbIcon
+    },
+    props:['publicationData']
 }
 </script>
 <style>
@@ -134,17 +130,27 @@ ul {
   list-style-type: none;
   font-size: 15px;
 }
+h1{
+    font-size:50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:bold;
+}
 
+h5{
+  font-size:20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:bold;  
+}
+p{
+    font-size:16px;
+    font-family:Arial, Helvetica, sans-serif;
+}
 .gradient{
     padding-left:2%;
     padding-right:2%;
 }
 .content{
     font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    text-justify:center;
-    text-align:justify;
-    text-align-last: justify;
     line-height:2.0rem;
 }
 

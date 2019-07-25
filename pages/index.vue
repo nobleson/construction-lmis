@@ -213,26 +213,19 @@
     
  <section>
       <mdb-row>
-         <mdb-col xl="3" md="3" class="mb-3">
-          <div class="container">
-            <mdb-polar-chart :data="polarChartData" :options="polarChartOptions" :width="300" :height="200"/>
-            <hr>
-          <mdb-bar-chart :data="barChartData" :options="barChartOptions" :width="300" :height="200"/>
-        </div>
-        </mdb-col>
-        <mdb-col md="6" class="mb-3">
-           <mdb-container>
-          <img src="~/assets/images/map (3).png" class="img-fluid" alt="Responsive image">
-          </mdb-container>
-        </mdb-col>
-        
-         <mdb-col xl="3" md="3" class="mb-3">
+        <mdb-col xl="4" md="4" class="mb-4">
           <div class="container">
         <mdb-polar-chart :data="polarChartData" :options="polarChartOptions" :width="300" :height="200"/>
           <hr>
           <mdb-pie-chart :data="pieChartData" :options="pieChartOptions" :width="300" :height="200"/>
         </div>
         </mdb-col>
+        <mdb-col md="8" class="mb-3">
+           <mdb-container>
+          <img src="~/assets/images/map (3).png" class="img-fluid" alt="Responsive image">
+          </mdb-container>
+        </mdb-col>
+        
       </mdb-row>
     </section>
   </div>
@@ -244,94 +237,18 @@
           <h3 class="font-weight-bold"> Trending Publications</h3>
           <div>
            <b-link to="publication">
-              <mdb-media>
-                <mdb-media-body>
-                  <h5 class="mt-0 font-weight-bold">Media heading</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
-                  congue felis in faucibus.
-                </mdb-media-body>
-              </mdb-media>
+              <b-media v-for="post in postList" :key="post.id">
+                <img slot="aside" :src="post.coverpage" width="200" height="200" alt="Media Aside">
+                <h5 class="mt-0">{{post.title}}</h5>
+                <p>
+                 {{post.aboutAuthor}}
+                </p>
+              </b-media>
+
            </b-link>
           
           </div>
-          <br/>
-         <div class="mt-1">
-               <div>
-             <mdb-media>
-                <mdb-media-body>
-                  <h5 class="mt-0 font-weight-bold">Media heading</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
-                  congue felis in faucibus.
-                </mdb-media-body>
-              </mdb-media>
-          </div>
-          
-          
-            </div>
-
-            <div class="mt-2">
-               <div>
-             <mdb-media>
-                <mdb-media-body>
-                  <h5 class="mt-0 font-weight-bold">Media heading</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
-                  congue felis in faucibus.
-                </mdb-media-body>
-              </mdb-media>
-          </div>
-          
-            </div>
-        
-        <b-card class="mt-3">
-          <h6 class="font-weight-bold">Related Post</h6>
-          <div>
-        <b-link to="publication">
-              <mdb-media>
-                <mdb-media-body>
-                  <h5 class="mt-0 font-weight-bold">Media heading</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
-                  congue felis in faucibus.
-                </mdb-media-body>
-              </mdb-media>
-           </b-link>
-          </div>
-          <br/>
-         <div class="mt-3">
-               <div>
-             <mdb-media>
-                <mdb-media-body>
-                  <h5 class="mt-0 font-weight-bold">Media heading</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
-                  congue felis in faucibus.
-                </mdb-media-body>
-              </mdb-media>
-          </div>
-          
-          
-            </div>
-
-            <div class="mt-3">
-               <div>
-             <mdb-media>
-                <mdb-media-body>
-                  <h5 class="mt-0 font-weight-bold">Media heading</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
-                  congue felis in faucibus.
-                </mdb-media-body>
-              </mdb-media>
-          </div>
-          
-            </div>
-        
-        </b-card>
-    
-      
+         
         </mdb-col>
 
 
@@ -339,257 +256,45 @@
 
       <div class="aside">
 
-        <div class="gradient3">
-        <mdb-card :class="['gradient-card', gradient4 && 'show']" @click.native="gradient4 = true" v-on-clickaway="away4" class="mb-4">
-          <div class="d-flex d-inline-flex">
-            <div class="card-image" style="background-image: url('/assets/images/Assesment Body.png')">
-              <a>
-                <mdb-mask waves class="text-black d-flex h-100 ">
-                  <div class="first-content align-self-center p-3" v-if="!gradient4">
-                    <h3 class="card-title font-weight-bold">Construction Sites</h3>
-                    <p class="lead mb-0">Details</p>
-                  </div>
-                  <div class="second-content align-self-center mx-auto text-center" v-if="gradient4">
-                    <mdb-icon icon="chart-bar" size="3x" />
-                  </div>
-                </mdb-mask>
-              </a>
+         <mdb-card cascade class="cascading-admin-card mt-3">
+            <div class="admin-up mt-1">
+             <h3><mdb-badge style="background-color:#008751">{{providerList.length}}</mdb-badge></h3>
             </div>
-            <!-- Data -->
-            <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-              <div class="third-content collapse-item mt-4 mb-2 mr-4 text-right justify-content-end ml-auto" v-if="gradient4">
-                <p class="text-uppercase text-muted">Construction Sites Information</p>
-                <h4 class="font-weight-bold">2000</h4>
-              </div>
-            </transition>
-          </div>
-          <!-- Content -->
-          <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-            <mdb-card-body class="collapse-item" v-if="gradient4">
-              <mdb-progress color="cyan" :value="50" />
-              <p class="text-muted">Better than last week (50%)</p>
-              <h4 class="text-uppercase font-weight-bold my-4">Details</h4>
-              <p class="text-muted" align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam vel dolores qui, necessitatibus aut eaque magni mollitia tenetur molestiae sit quae quos quaerat amet exercitationem atque animi odio.</p>
-            </mdb-card-body>
-          </transition>
-        </mdb-card>
-        </div>
-        <div class="gradient3">
-        <mdb-card :class="['gradient-card', gradient5 && 'show']" @click.native="gradient5 = true" v-on-clickaway="away5" class="mb-4">
-          <div class="d-flex d-inline-flex">
-            <div class="card-image" style="background-image: url(~/)">
-              <a>
-                <mdb-mask waves class="text-black d-flex h-100 ">
-                  <div class="first-content align-self-center p-3" v-if="!gradient5">
-                    <h3 class="card-title font-weight-bold">Construction Jobs</h3>
-                    <p class="lead mb-0">Details</p>
-                  </div>
-                  <div class="second-content align-self-center mx-auto text-center" v-if="gradient5">
-                    <mdb-icon icon="chart-pie" size="3x" />
-                  </div>
-                </mdb-mask>
-              </a>
+            <mdb-card-body class="text-center">
+            <mdb-card-title> Registered Training Providers</mdb-card-title>
+            <b-link to="provider"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
+          </mdb-card-body>
+          </mdb-card>
+      
+          <mdb-card cascade class="cascading-admin-card mt-3">
+            <div class="admin-up mt-1">
+             <h3><mdb-badge style="background-color:#008751">{{companyList.length}}</mdb-badge></h3>
             </div>
-            <!-- Data -->
-            <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-              <div class="third-content collapse-item mt-4 mb-2 mr-4 text-right justify-content-end ml-auto" v-if="gradient5">
-                <p class="text-uppercase text-muted">Details</p>
-                <h4 class="font-weight-bold">20000</h4>
-              </div>
-            </transition>
-          </div>
-          <!-- Content -->
-          <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-            <mdb-card-body class="collapse-item" v-if="gradient5">
-              <mdb-progress color="amber" :value="75" />
-              <p class="text-muted">Worse than last week (75%)</p>
-              <h4 class="text-uppercase font-weight-bold my-4">Details</h4>
-              <p class="text-muted" align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam vel dolores qui, necessitatibus aut eaque magni mollitia tenetur molestiae sit quae quos quaerat amet exercitationem atque animi odio.</p>
-            </mdb-card-body>
-          </transition>
-        </mdb-card>
-        </div>
+            <mdb-card-body class="text-center">
+            <mdb-card-title>Registered Construction Companies</mdb-card-title>
+            <b-link to="company"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
+          </mdb-card-body>
+          </mdb-card>
+          
+          <mdb-card cascade class="cascading-admin-card mt-3">
+            <div class="admin-up mt-1">
+             <h3><mdb-badge style="background-color:#008751">{{assesorList.length}}</mdb-badge></h3>
+            </div>
+            <mdb-card-body class="text-center">
+            <mdb-card-title>Assessors</mdb-card-title>
+            <b-link to="assessor"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
+          </mdb-card-body>
+          </mdb-card>
 
-        <div class="gradient3">
-        <mdb-card :class="['gradient-card', gradient6 && 'show']" @click.native="gradient6 = true" v-on-clickaway="away6" class="mb-4">
-          <div class="d-flex d-inline-flex">
-            <div class="card-image" style="background-image: url('~/assets/images/corbon.png'),">
-              <a>
-                <mdb-mask waves class="text-black d-flex h-100 ">
-                  <div class="first-content align-self-center p-3" v-if="!gradient6">
-                    <h3 class="card-title font-weight-bold">Training Providers</h3>
-                    <p class="lead mb-0">Details</p>
-                  </div>
-                  <div class="second-content align-self-center mx-auto text-center" v-if="gradient6">
-                    <mdb-icon icon="chart-bar" size="3x" />
-                  </div>
-                </mdb-mask>
-              </a>
+          <mdb-card cascade class="cascading-admin-card mt-3">
+            <div class="admin-up mt-1">
+             <h3><mdb-badge style="background-color:#008751">{{postList.length}}</mdb-badge></h3>
             </div>
-            <!-- Data -->
-            <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-              <div class="third-content collapse-item mt-4 mb-2 mr-4 text-right justify-content-end ml-auto" v-if="gradient6">
-                <p class="text-uppercase text-muted">Training providers Information </p>
-                <h4 class="font-weight-bold">2000</h4>
-              </div>
-            </transition>
-          </div>
-          <!-- Content -->
-          <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-            <mdb-card-body class="collapse-item" v-if="gradient6">
-              <mdb-progress color="cyan" :value="50" />
-              <p class="text-muted">Better than last week (50%)</p>
-              <h4 class="text-uppercase font-weight-bold my-4">Details</h4>
-              <p class="text-muted" align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam vel dolores qui, necessitatibus aut eaque magni mollitia tenetur molestiae sit quae quos quaerat amet exercitationem atque animi odio.</p>
-            </mdb-card-body>
-          </transition>
-        </mdb-card>
-        </div>
-
-        <div class="gradient3">
-        <mdb-card :class="['gradient-card', gradient2 && 'show']" @click.native="gradient2 = true" v-on-clickaway="away2" class="mb-4">
-          <div class="d-flex d-inline-flex">
-            <div class="card-image"  style="background-image: url()">
-              <a>
-                <mdb-mask waves class="text-black d-flex h-100 " >
-                  <div class="first-content align-self-center p-3" v-if="!gradient2">
-                    <h3 class="card-title font-weight-bold">Artisans and Craftmen</h3>
-                    <p class="lead mb-0">Details</p>
-                  </div>
-                  <div class="second-content align-self-center mx-auto text-center" v-if="gradient2">
-                    <mdb-icon icon="chart-line" size="3x" />
-                  </div>
-                </mdb-mask>
-              </a>
-            </div>
-            <!-- Data -->
-            <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-              <div class="third-content collapse-item mt-4 mb-2 mr-4 text-right justify-content-end ml-auto" v-if="gradient2">
-                <p class="text-uppercase text-muted">Artisans Data Summary</p>
-                <h4 class="font-weight-bold">200</h4>
-              </div>
-            </transition>
-          </div>
-          <!-- Content -->
-          <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-            <mdb-card-body class="collapse-item" v-if="gradient2">
-              <mdb-progress color="purple" :value="25" />
-              <p class="text-muted">Worse than last week (25%)</p>
-              <h4 class="text-uppercase font-weight-bold my-4">Details</h4>
-              <p class="text-muted" align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam vel dolores qui, necessitatibus aut eaque magni mollitia tenetur molestiae sit quae quos quaerat amet exercitationem atque animi odio.</p>
-            </mdb-card-body>
-          </transition>
-        </mdb-card>
-        </div>
-
-        <div class="gradient3">
-
-        <mdb-card :class="['gradient-card', gradient1 && 'show']" @click.native="gradient1 = true" v-on-clickaway="away1" class="mb-4">
-          <div class="d-flex d-inline-flex">
-            <div class="card-image" style="background-image: url (' + require('./assets/images/new.png') + ')'}">
-              <a>
-                <mdb-mask waves class="text-black d-flex h-100 ">
-                  <div class="first-content align-self-center p-3" v-if="!gradient1">
-                    <h3 class="card-title font-weight-bold">Assesors</h3>
-                    <p class="lead mb-0">Details</p>
-                  </div>
-                  <div class="second-content align-self-center mx-auto text-center" v-if="gradient1">
-                    <mdb-icon icon="money-bill-alt" size="3x" />
-                  </div>
-                </mdb-mask>
-              </a>
-            </div>
-            <!-- Data -->
-            <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-              <div class="third-content collapse-item mt-4 mb-2 mr-4 text-right justify-content-end ml-auto" v-if="gradient1">
-                <p class="text-uppercase text-muted">Assesors</p>
-                <h4 class="font-weight-bold">2000$</h4>
-              </div>
-            </transition>
-          </div>
-          <!-- Content -->
-          <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-            <mdb-card-body class="collapse-item" v-if="gradient1">
-              <mdb-progress color="primary" :value="25" />
-              <p class="text-muted">Better than last week (25%)</p>
-              <h4 class="text-uppercase font-weight-bold my-4">Details</h4>
-              <p class="text-muted" align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam vel dolores qui, necessitatibus aut eaque magni mollitia tenetur molestiae sit quae quos quaerat amet exercitationem atque animi odio.</p>
-            </mdb-card-body>
-          </transition>
-        </mdb-card>
-
-    <!--- Second Card-->
-        <mdb-card :class="['gradient-card', gradient3 && 'show']" @click.native="gradient3 = true" v-on-clickaway="away3" class="mb-4">
-          <div class="d-flex d-inline-flex">
-            <div class="card-image" style="background-image: url()">
-              <a>
-                <mdb-mask waves class="text-black d-flex h-100 ">
-                  <div class="first-content align-self-center p-3" v-if="!gradient3">
-                    <h3 class="card-title font-weight-bold">Articles</h3>
-                    <p class="lead mb-0">Details</p>
-                  </div>
-                  <div class="second-content align-self-center mx-auto text-center" v-if="gradient3">
-                    <mdb-icon icon="chart-pie" size="3x" />
-                  </div>
-                </mdb-mask>
-              </a>
-            </div>
-            <!-- Data -->
-            <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-              <div class="third-content collapse-item mt-4 mb-2 mr-4 text-right justify-content-end ml-auto" v-if="gradient3">
-                <p class="text-uppercase text-muted">Articles</p>
-                <h4 class="font-weight-bold">20000</h4>
-              </div>
-            </transition>
-          </div>
-          <!-- Content -->
-          <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-            <mdb-card-body class="collapse-item" v-if="gradient3">
-              <mdb-progress color="amber" :value="75" />
-              <p class="text-muted">Worse than last week (75%)</p>
-              <h4 class="text-uppercase font-weight-bold my-4">Details</h4>
-              <p class="text-muted" align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam vel dolores qui, necessitatibus aut eaque magni mollitia tenetur molestiae sit quae quos quaerat amet exercitationem atque animi odio.</p>
-            </mdb-card-body>
-          </transition>
-        </mdb-card>
-    
-    <!---Third-->
-    <div class="gradient">
-    <mdb-card :class="['gradient-card', gradient7 && 'show']" @click.native="gradient7 = true" v-on-clickaway="away7">
-          <div class="d-flex d-inline-flex">
-            <div class="card-image" style="background-image: url()">
-              <a>
-                <mdb-mask waves class="text-black d-flex h-100 ">
-                  <div class="first-content align-self-center p-3" v-if="!gradient7">
-                    <h3 class="card-title font-weight-bold">Companies</h3>
-                    <p class="lead mb-0">Details</p>
-                  </div>
-                  <div class="second-content align-self-center mx-auto text-center" v-if="gradient7">
-                    <mdb-icon icon="chart-bar" size="3x" />
-                  </div>
-                </mdb-mask>
-              </a>
-            </div>
-            <!-- Data -->
-            <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-              <div class="third-content collapse-item mt-4 mb-2 mr-4 text-right justify-content-end ml-auto" v-if="gradient7">
-                <p class="text-uppercase text-muted">Registered Companies in Total</p>
-                <h4 class="font-weight-bold">2000</h4>
-              </div>
-            </transition>
-          </div>
-          <!-- Content -->
-          <transition @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-            <mdb-card-body class="collapse-item" v-if="gradient7">
-              <mdb-progress color="cyan" :value="50" />
-              <p class="text-muted">Better than last week (50%)</p>
-              <h4 class="text-uppercase font-weight-bold my-4">Details</h4>
-              <p class="text-muted" align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam vel dolores qui, necessitatibus aut eaque magni mollitia tenetur molestiae sit quae quos quaerat amet exercitationem atque animi odio.</p>
-            </mdb-card-body>
-          </transition>
-        </mdb-card>
-        </div>
-        </div> 
+            <mdb-card-body class="text-center">
+            <mdb-card-title>Puplications</mdb-card-title>
+            <b-link to="publication"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
+          </mdb-card-body>
+          </mdb-card>
       
         </div>
 
@@ -600,13 +305,13 @@
 
 </template>
 <script>
-
+import {mapGetters, mapActions,mapState,mapMutations } from 'vuex'
 import { mixin as clickaway } from 'vue-clickaway';
-import { mdbFooter, mdbContainer, mdbRow, mdbCol,} from 'mdbvue';
-import { mdbNavbar,mdbCarousel, mdbCarouselItem, mdbCarouselCaption,
+import {  mdbBadge, mdbFooter, mdbContainer, mdbRow, mdbCol,} from 'mdbvue';
+import { mdbNavbar, mdbMediaImage, mdbCarousel, mdbCarouselItem, mdbCarouselCaption,
           mdbNavItem, mdbNavbarNav, mdbNavbarToggler, mdbInput, 
           mdbBtn, waves, mdbCard,  mdbCardImage, mdbCardHeader, 
-          mdbCardBody, mdbCardTitle, mdbCardText, mdbCardFooter, mdbCardUp, 
+          mdbCardBody,  mdbCardTitle, mdbCardText, mdbCardFooter, mdbCardUp, 
           mdbCardAvatar, mdbCardGroup, mdbView,  mdbMedia, mdbMediaBody, mdbMask, mdbIcon, mdbTooltip,
           mdbLineChart, mdbTabPane, mdbProgress, mdbTbl, mdbTab, mdbTabItem, mdbTabContent, mdbMasonry,
           mdbMasonryItem, mdbRadarChart, mdbBarChart, mdbPolarChart, mdbPieChart, mdbDoughnutChart, mdbScatterChart, mdbBubbleChart,
@@ -616,7 +321,9 @@ import { mdbNavbar,mdbCarousel, mdbCarouselItem, mdbCarouselCaption,
 export default {
   name: 'index',
   components: {
-    mdbMedia,
+     mdbBadge,
+     mdbMedia,
+    mdbMediaImage,
     mdbMediaBody,
     mdbFooter,
     mdbContainer,
@@ -661,14 +368,12 @@ export default {
     mdbBubbleChart,
     mdbHorizontalBarChart
   },
-  mounted() {
-    this.interval = setInterval(this.changeData, 2000);
-    this.fullHeight2 = '100%';
-  },
   data() {
     return {
-      
-   
+      providerList:[],
+      companyList:[],
+      assesorList:[],
+      postList:[],
 
       slide:0,
       slide:null,
@@ -768,10 +473,70 @@ export default {
     }
         
   },
+      mounted() {
+    this.interval = setInterval(this.changeData, 2000);
+    this.fullHeight2 = '100%';
+    this.createProviders();
+    this.createCompanies();
+    this.createAssesors();
+    this.createPosts();
+  },
+    computed: {
+        ...mapGetters({isProviderLoading: 'provider/getProviderStatus' }),
+        processProviders: function(){
+              return this.providerList
+        }
     
-
+         
+    },
 
   methods: {
+ ...mapActions({loadProviders: 'provider/loadProviders', loadCompanies:'company/loadCompanies', loadAssesors:'assessors/loadAssesors', loadPosts:'post/loadPosts' }),
+      createProviders() {
+          let self = this
+          this.loadProviders().then(list => self.getExistingProviderList(list)).catch(function(error){console.log(error.message)});
+        },
+      getExistingProviderList(list){
+        if(list){
+          //console.log('provider:'+JSON.stringify(list)) 
+         return this.providerList = list
+        }
+      },  
+
+      createCompanies() {
+          let self = this
+          this.loadCompanies().then(list => self.getExistingCompanyList(list)).catch(function(error){console.log(error.message)});
+        },
+      getExistingCompanyList(list){
+        if(list){
+          //console.log('provider:'+JSON.stringify(list)) 
+         return this.companyList = list
+        }
+      },
+
+      createAssesors() {
+          let self = this
+          this.loadAssesors().then(list => self.getExistingAssesorList(list)).catch(function(error){console.log(error.message)});
+        },
+      getExistingAssesorList(list){
+        if(list){
+         // console.log('assesor:'+JSON.stringify(list)) 
+         return this.assesorList = list
+        }
+      },
+
+      createPosts() {
+          let self = this
+          this.loadPosts().then(list => self.getExistingPostList(list)).catch(function(error){console.log(error.message)});
+        },
+      getExistingPostList(list){
+        if(list){
+         console.log('assesor:'+JSON.stringify(list)) 
+         return this.postList = list
+        }
+      },
+
+     
     changeCurrentComponent(newComponent) {
       this.currentComponent = newComponent;
     },
@@ -827,68 +592,39 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.slider {
-  
-  overflow: hidden;
-  width: 360px;
-  height: 640px;
+.cascading-admin-card {
+  margin: 20px 0;
 }
-
-.slider-cards {
-  position: relative;
-  width: 900px;
-  margin: 20px 50px;  
-  z-index: 1;
+.cascading-admin-card .admin-up {
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: -20px;
 }
-
-.slider-card {
-  display: inline-block;
-  background-color: grey;
-  overflow: hidden;
-  width: 260px;
-  height: 360px;
-  margin-right: 30px;
-  border-radius: 12px;
-  box-shadow:0px 60px 20px -20px rgba(0, 0, 0, 0.3)
+.cascading-admin-card .admin-up .fas,
+.cascading-admin-card .admin-up .far {
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.2), 0 2px 13px 0 rgba(0, 0, 0, 0.19);
+  padding: 1.7rem;
+  font-size: 2rem;
+  color: #fff;
+  text-align: left;
+  margin-right: 1rem;
+  border-radius: 3px;
 }
-.slider-card img {
-  width: 100%;
+.cascading-admin-card .admin-up .data {
+  float: right;
+  margin-top: 2rem;
+  text-align: right;
 }
-.slider-info {
-  position: relative;
-  overflow: hidden;
-  background-color: white;
-  margin-top: -180px;
-  margin-left: 30px;
-  padding: 200px 20px 0;
-  width: 300px;
-  height: 400px;
-  text-align: center;
-  border-radius: 8px;
+.admin-up .data p {
+  font-size: 20px;
 }
-
-.slider-info h1 {
-  font-family: Arial Black, Gadget, sans-serif;
-  line-height: 25px;
-  font-size: 23px;
-}
-.slider-info p {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.slider-button {
-  position: absolute;
-  width: 100%;
-  height: 50px;
-  bottom: 0;
-  left: 0;
-  border: none;
+.admin-up1 .data1 p {
   color: white;
-  background-color: #E71284;
-  font-size: 18px;
-  font-family: Arial, Helvetica, sans-serif;
 }
+.data{
 
+  font-size: 20px;
+}
 h4 {
   font-weight: bold;
 }

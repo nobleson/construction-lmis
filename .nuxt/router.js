@@ -2,10 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
-const _0f99eb52 = () => interopDefault(import('..\\pages\\articles.vue' /* webpackChunkName: "pages_articles" */))
-const _9e2b41b8 = () => interopDefault(import('..\\pages\\profile.vue' /* webpackChunkName: "pages_profile" */))
+const _60843c5c = () => interopDefault(import('..\\pages\\assessor.vue' /* webpackChunkName: "pages_assessor" */))
+const _eff4f010 = () => interopDefault(import('..\\pages\\company.vue' /* webpackChunkName: "pages_company" */))
+const _0d142506 = () => interopDefault(import('..\\pages\\provider.vue' /* webpackChunkName: "pages_provider" */))
 const _3365d6b2 = () => interopDefault(import('..\\pages\\publication.vue' /* webpackChunkName: "pages_publication" */))
-const _4dd77343 = () => interopDefault(import('..\\pages\\trainingproviders.vue' /* webpackChunkName: "pages_trainingproviders" */))
 const _9b3082e6 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 
 Vue.use(Router)
@@ -83,21 +83,21 @@ export function createRouter() {
     scrollBehavior,
 
     routes: [{
-      path: "/articles",
-      component: _0f99eb52,
-      name: "articles"
+      path: "/assessor",
+      component: _60843c5c,
+      name: "assessor"
     }, {
-      path: "/profile",
-      component: _9e2b41b8,
-      name: "profile"
+      path: "/company",
+      component: _eff4f010,
+      name: "company"
+    }, {
+      path: "/provider",
+      component: _0d142506,
+      name: "provider"
     }, {
       path: "/publication",
       component: _3365d6b2,
       name: "publication"
-    }, {
-      path: "/trainingproviders",
-      component: _4dd77343,
-      name: "trainingproviders"
     }, {
       path: "/",
       component: _9b3082e6,

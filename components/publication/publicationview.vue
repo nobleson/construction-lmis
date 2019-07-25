@@ -7,38 +7,10 @@
         <br>
           <div>
             <ul class="list-unstyled">
-              <b-media tag="li">
-                <b-img slot="aside" blank blank-color="#abc" width="64" alt="placeholder"></b-img>
-                <h5 class="mt-0 mb-1">List-based media object</h5>
-                <p class="mb-0">
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-                  Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc
-                  ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                  <b-button variant="success"   @click="$emit('changeComponent',{component: 'publicationdetail', id: null})" class="">Read More ...</b-button>
-
-                </p>
-              </b-media>
-
-              <b-media tag="li" class="my-4">
-                <b-img slot="aside" blank blank-color="#cba" width="64" alt="placeholder"></b-img>
-
-                <h5 class="mt-0 mb-1">List-based media object</h5>
-                <p class="mb-0">
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-                  Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc
-                  ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </p>
-              </b-media>
-
-              <b-media tag="li">
-                <b-img slot="aside" blank blank-color="#bac" width="64" alt="placeholder"></b-img>
-
-                <h5 class="mt-0 mb-1">List-based media object</h5>
-                <p class="mb-0">
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-                  Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc
-                  ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </p>
+              <b-media tag="li" v-for="post in postList" :key="post.id">
+                <img slot="aside" :src="post.coverpage" width="200" height="200" alt="Media Aside">
+                <h5 class="mt-0 mb-1">{{post.title}}</h5>
+                  <b-button variant="success"   @click="$emit('changeComponent',{component: 'publicationDetail', data: post})" class="">Read More ...</b-button>
               </b-media>
             </ul>
           </div>
@@ -71,7 +43,6 @@ export default {
       return {
         verticalWithin: 0,
         postList: [],
-        dataObject: {}
       }
     },
     mounted(){
@@ -80,8 +51,9 @@ export default {
     computed: {
         ...mapGetters({isPostLoading: 'post/getPostStatus' }),
         processPosts: function(){
-              return this.postList
-        }
+            return this.postList
+        },
+         
     
          
     },
@@ -90,13 +62,14 @@ export default {
         createPosts() {
           let self = this
           this.loadPosts().then(list => self.getExistingPostList(list)).catch(function(error){console.log(error.message)});
+        
         },
       getExistingPostList(list){
         if(list){
-          console.log('POST:'+JSON.stringify(list)) 
          return this.postList = list
         }
-      },  
+      }, 
+        
       linkClass(idx) {
         if (this.tabIndex === idx) {
           return ['bg-primary', 'text-light']
