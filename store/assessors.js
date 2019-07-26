@@ -1,6 +1,6 @@
 export const state = () => ({
     assesors: [],
-    isassesorLoading: false
+    isAssesorLoading: true
    
   })
   export const mutations = {
@@ -8,13 +8,13 @@ export const state = () => ({
       state.assessors = data
     },
     changeAssesorStatus(state){
-      state.isassesorLoading = !state.isassesorLoading
+      state.isAssesorLoading = !state.isAssesorLoading
     }
   }
   export const getters = {
     getAssesors: state => state.assesors,
 
-    getAssesorStatus: state => state.isassesorLoading
+    getAssesorStatus: state => state.isAssesorLoading
   } 
   
   export const actions= {
@@ -24,6 +24,7 @@ export const state = () => ({
       let herokuUrl = 'https://shielded-savannah-72922.herokuapp.com/api/assesor/getall';
       self.$axios.$get(herokuUrl)
        .then(function (response){
+         vuexContext.commit('changeAssesorStatus')
          resolve(response)
        })
        .catch(function (error) {

@@ -16,14 +16,23 @@ export default {
   },
   data() {
     return {
-      currentComponent: 'assessorsView',
+      currentComponent: '',
       currentassessorData: null
+    }
+  },
+   mounted(){
+    var data = this.$route.params.data
+    if(data == null){
+      this.currentComponent = 'assessorsView'
+    }else{
+      this.currentassessorData = data
+       this.currentComponent = 'assessorsView'
     }
   },
   methods: {
       changeCurrentComponent(event){
       this.currentassessorData = event.data;
-      console.log(event.data)
+     // console.log(event.data)
       this.currentComponent = event.component;        
       }
   },

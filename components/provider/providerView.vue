@@ -20,6 +20,7 @@ import { stringify } from 'querystring';
       mdbBarChart,
       mdbContainer
     },
+    
     data() {
       return {
         verticalWithin: 0,
@@ -103,7 +104,7 @@ import { stringify } from 'querystring';
        getBarchartDataSet(providerList){
           for(var i = 0; i < providerList.length; i++){
             var objectProvider = providerList[i] 
-             console.log("PROVIDER"+JSON.stringify(objectProvider))
+             //console.log("PROVIDER"+JSON.stringify(objectProvider))
 
             for(var k = 0; k < this.barChartData.labels.length; k++){
               if(objectProvider.state == this.barChartData.labels[k]){
@@ -115,7 +116,7 @@ import { stringify } from 'querystring';
               }
             }
           }
-           console.log(this.barChartData.datasets[0].data)
+          // console.log(this.barChartData.datasets[0].data)
         },
       linkClass(idx) {
         if (this.tabIndex === idx) {

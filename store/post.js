@@ -1,6 +1,6 @@
 export const state = () => ({
     posts: [],
-    isPostLoading: false
+    isPostLoading: true
    
   })
   export const mutations = {
@@ -24,6 +24,7 @@ export const state = () => ({
       let herokuUrl = 'https://shielded-savannah-72922.herokuapp.com/api/post/getall';
       self.$axios.$get(herokuUrl)
        .then(function (response){
+         vuexContext.commit('changePostStatus')
          resolve(response)
        })
        .catch(function (error) {

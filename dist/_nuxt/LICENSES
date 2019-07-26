@@ -4,6 +4,12 @@
  * Released under the MIT License.
  */
 
+/**
+ * vuex v3.1.1
+ * (c) 2019 Evan You
+ * @license MIT
+ */
+
 /*!
   * vue-router v3.0.6
   * (c) 2019 Evan You
@@ -21,6 +27,13 @@
 	(c) Sindre Sorhus
 	@license MIT
 	*/
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
 
 /*!
   Copyright (c) 2017 Jed Watson.
@@ -92,5 +105,11 @@
 /*!
  * vue2-transitions v0.3.0
  * (c) 2019-present cristij <joracristi@gmail.com>
+ * Released under the MIT License.
+ */
+
+/*!
+ * vue-material v1.0.0-beta-10.2
+ * Made with <3 by marcosmoura 2019
  * Released under the MIT License.
  */

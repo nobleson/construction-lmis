@@ -47,7 +47,7 @@
         
         <b-nav-item  ></b-nav-item>
         <b-nav-item class="active" :to="{ name: 'index'}"><span class="text-white">Home</span></b-nav-item>
-        <b-nav-item :to="{ name: 'publication',params: {data: null}}" ><span class="text-white">Publication</span></b-nav-item>
+        <b-nav-item :to="{ name: 'publication'}" ><span class="text-white">Publication</span></b-nav-item>
         <b-nav-item :to="{ name: 'provider'}" ><span class="text-white">Provider</span></b-nav-item>
   
 
@@ -75,10 +75,9 @@
   </b-navbar>
 </div>
 
-<!-- <vue-navigation-bar style="background-color:#81c784 "  :options="navbarOptions" /> -->
-<!-- ----Header Main------- -->
-
-<nuxt/>
+  <div class="animated fadeIn">
+       <component :mainData="currentHomeData" @changeComponent="changeCurrentComponent" :is="currentComponent"></component>
+  </div>
 
 <back-to-top bottom="50px" right="50px">
   <button type="button" class="btn btn-info btn-to-top"><i class="fa fa-chevron-up"></i></button>
@@ -103,8 +102,7 @@
                 </mdb-container>
             </div>
         <div >
-             
-              <mdb-row class="mt-3 justify-content-center container" >
+                <mdb-row class="mt-3 justify-content-center" >
                     <mdb-col md="3" lg="4" xl="3" class="mb-4">
                         <h6 class="text-uppercase font-weight-bold"><strong>C-LMIS</strong></h6>
                         <hr class="green accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px"/>
@@ -128,7 +126,7 @@
                         <p><a href="#!">Shipping Rates</a></p>
                         <p><a href="#!">Help</a></p>
                     </mdb-col>
-                    <mdb-col md="4" lg="3" xl="3" class="mb-4 float-right ml-auto">
+                    <mdb-col md="4" lg="3" xl="3" class="mb-4">
                         <h6 class="text-uppercase font-weight-bold"><strong>Contact</strong></h6>
                         <hr class="green accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px"/>
                         <p><i class="fas fa-home mr-3"></i> Abuja, NY 10012, US</p>
@@ -136,7 +134,6 @@
                         <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
                         <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
                     </mdb-col>
-                    
                 </mdb-row>
                  <mdb-col md="4" lg="4" class="ml-lg-0">
                         <div class="text-center text-md-right">
@@ -148,8 +145,7 @@
                             </ul>
                         </div>
                     </mdb-col>
-                  </div>
-          
+            </div>
             <div class="footer-copyright text-center py-3">
     
                 <mdb-container fluid>
@@ -157,37 +153,42 @@
                 </mdb-container>
             </div>
         </mdb-footer>
-   
+
   </div>
 </template>
+
 <script>
-import { mdbFooter, mdbContainer, mdbRow, mdbCol,} from 'mdbvue';
+import home from '~/components/home.vue'
+import publicationView from '~/components/publication/publicationView.vue'
+import publicationDetail from '~/components/publication/publicationDetail.vue'
 export default {
-  
+  layout:'empty',
   components: {
-    mdbFooter,
-    mdbContainer,
-    mdbRow,
-    mdbCol,
-    
+    home,
+    publicationView,
+    publicationDetail,
   },
-  
   data() {
     return {
-   /* Navbar Section */
-    }  
+      currentComponent: 'home',
+      currentHomeData: null
+    }
   },
   methods: {
-      goToHome(){
-        
-         this.$router.push('/publication')
+      changeCurrentComponent(event){
+      this.currentHomeData = event.data;
+      console.log("componentChange"+event.data)
+      this.currentComponent = event.component;        
+      },
+      comChange(){
+        console.log("changed")
       }
-    }
 
-};
+  },
+  
+  
+}
 </script>
-
-<!-- Added "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .active{
   background-color: rgba(255, 255, 255, 0.1);
@@ -268,9 +269,7 @@ h4 {
 .wrapper {
    overflow-x: hidden;
  }
-li a {
-  color: #2BBBAD;
-}
+
 li:hover {
   background: #008751;
   color: white;
@@ -296,8 +295,6 @@ li {
  font-size:20px;
  transition-duration: 0.7s;
 }
-
-
   .logo{
       padding-top: 1%;
       padding-bottom: 2%;
@@ -352,8 +349,4 @@ p {
 }
 
 
-
-</style> 
-    
-
-
+</style>

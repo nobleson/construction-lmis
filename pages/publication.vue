@@ -16,14 +16,23 @@ export default {
   },
   data() {
     return {
-      currentComponent: 'publicationView',
+      currentComponent: '',
       currentpublicationData: null
+    }
+  },
+  mounted(){
+    var data = this.$route.params.data
+    if(data == null){
+      this.currentComponent = 'publicationView'
+    }else{
+      this.currentpublicationData = data
+       this.currentComponent = 'publicationDetail'
     }
   },
   methods: {
       changeCurrentComponent(event){
       this.currentpublicationData = event.data;
-      console.log(event.data)
+    //  console.log(event.data)
       this.currentComponent = event.component;        
       }
   },

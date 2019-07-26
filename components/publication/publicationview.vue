@@ -43,10 +43,12 @@ export default {
       return {
         verticalWithin: 0,
         postList: [],
+         props: ['params'],
       }
     },
     mounted(){
             this.createPosts();
+         //   console.log("component:"+JSON.stringify(this.params))
     },
     computed: {
         ...mapGetters({isPostLoading: 'post/getPostStatus' }),

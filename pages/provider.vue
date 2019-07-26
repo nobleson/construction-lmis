@@ -23,7 +23,7 @@ export default {
   methods: {
       changeCurrentComponent(event){
       this.currentproviderData = event.data;
-      console.log(event.data)
+    //  console.log(event.data)
       this.currentComponent = event.component;        
       }
   },

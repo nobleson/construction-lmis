@@ -1,6 +1,6 @@
 export const state = () => ({
     companies: [],
-    iscompanyLoading: false
+    isCompanyLoading: true
    
   })
   export const mutations = {
@@ -8,13 +8,13 @@ export const state = () => ({
       state.providers = data
     },
     changeCompanyStatus(state){
-      state.iscompanyLoading = !state.iscompanyLoading
+      state.isCompanyLoading = !state.isCompanyLoading
     }
   }
   export const getters = {
     getCompanies: state => state.posts,
 
-    getCompanyStatus: state => state.iscompanyLoading
+    getCompanyStatus: state => state.isCompanyLoading
   } 
   
   export const actions= {
@@ -24,6 +24,7 @@ export const state = () => ({
       let herokuUrl = 'https://shielded-savannah-72922.herokuapp.com/api/company/getall';
       self.$axios.$get(herokuUrl)
        .then(function (response){
+         vuexContext.commit('changeCompanyStatus')
          resolve(response)
        })
        .catch(function (error) {
