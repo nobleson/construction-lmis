@@ -2,11 +2,14 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
+const _13356cb5 = () => interopDefault(import('..\\pages\\artisan.vue' /* webpackChunkName: "pages_artisan" */))
 const _60843c5c = () => interopDefault(import('..\\pages\\assessor.vue' /* webpackChunkName: "pages_assessor" */))
 const _eff4f010 = () => interopDefault(import('..\\pages\\company.vue' /* webpackChunkName: "pages_company" */))
-const _e770c088 = () => interopDefault(import('..\\pages\\default.vue' /* webpackChunkName: "pages_default" */))
 const _0d142506 = () => interopDefault(import('..\\pages\\provider.vue' /* webpackChunkName: "pages_provider" */))
 const _3365d6b2 = () => interopDefault(import('..\\pages\\publication.vue' /* webpackChunkName: "pages_publication" */))
+const _902cdde2 = () => interopDefault(import('..\\pages\\regulatorybody.vue' /* webpackChunkName: "pages_regulatorybody" */))
+const _1cefdaa3 = () => interopDefault(import('..\\pages\\trainee.vue' /* webpackChunkName: "pages_trainee" */))
+const _1da70c30 = () => interopDefault(import('..\\pages\\trainer.vue' /* webpackChunkName: "pages_trainer" */))
 const _9b3082e6 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 
 Vue.use(Router)
@@ -84,6 +87,10 @@ export function createRouter() {
     scrollBehavior,
 
     routes: [{
+      path: "/artisan",
+      component: _13356cb5,
+      name: "artisan"
+    }, {
       path: "/assessor",
       component: _60843c5c,
       name: "assessor"
@@ -92,10 +99,6 @@ export function createRouter() {
       component: _eff4f010,
       name: "company"
     }, {
-      path: "/default",
-      component: _e770c088,
-      name: "default"
-    }, {
       path: "/provider",
       component: _0d142506,
       name: "provider"
@@ -103,6 +106,18 @@ export function createRouter() {
       path: "/publication",
       component: _3365d6b2,
       name: "publication"
+    }, {
+      path: "/regulatorybody",
+      component: _902cdde2,
+      name: "regulatorybody"
+    }, {
+      path: "/trainee",
+      component: _1cefdaa3,
+      name: "trainee"
+    }, {
+      path: "/trainer",
+      component: _1da70c30,
+      name: "trainer"
     }, {
       path: "/",
       component: _9b3082e6,

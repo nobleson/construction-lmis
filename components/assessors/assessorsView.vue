@@ -44,19 +44,19 @@
     </mdb-list-group>
     </div>
   <div class="col-md-8 text-center">
-      <h1>Assesssors Across the states Chart</h1>
+      <h1>Assesssors Across the States Chart</h1>
       <mdb-bar-chart :data="barChartData" :options="barChartOptions" :width="1300" :height="500" class="mt-5"></mdb-bar-chart>
             
   </div>
   <div class="col-md-2">
   <mdb-list-group class="mt-5">
-    <mdb-list-group-item>Katsina<mdb-badge color="primary" pill>14</mdb-badge>
+    <mdb-list-group-item>Katsina<mdb-badge color="primary" pill>12</mdb-badge>
       </mdb-list-group-item>
       <mdb-list-group-item>Kebbi<mdb-badge color="primary" pill>2</mdb-badge>
       </mdb-list-group-item>
       <mdb-list-group-item>Kogi<mdb-badge color="primary" pill>1</mdb-badge>
       </mdb-list-group-item>
-     <mdb-list-group-item>Kwara<mdb-badge color="primary" pill>14</mdb-badge>
+      <mdb-list-group-item>Kwara<mdb-badge color="primary" pill>14</mdb-badge>
       </mdb-list-group-item>
       <mdb-list-group-item>Lagos<mdb-badge color="primary" pill>2</mdb-badge>
       </mdb-list-group-item>
@@ -118,12 +118,44 @@ import { stringify } from 'querystring';
             label: 'Training Poviders Across The States',
              data: this.assessorData.data,
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
+              'rgba(255, 99, 132, 0.3)',
+              'rgba(54, 162, 235, 0.4)',
+              'rgba(255, 206, 86, 0.6)',
+              'rgba(75, 192, 192, 0.8)',
+              'rgba(153, 102, 255, 0.9)',
+              'rgba(255, 159, 64, 0.5)',
+              'rgba(0, 0, 0, 0.7)',
+              'rgba(3, 169, 244, 0.7)',
+              'rgba(244, 67, 54, 0.7)',
+              'rgba(233, 30, 99, 0.7)',
+              'rgba(156, 39, 176, 0.7)',
+              'rgba(63, 81, 181, 0.7)',
+              'rgba(0, 188, 212, 0.7)',
+              'rgba(0, 150, 136, 0.7)',
+              'rgba(76, 175, 80, 0.7)',
+              'rgba(205, 220, 57, 0.7)',
+              'rgba(255, 235, 59, 0.7)',
+              'rgba(255, 152, 0, 0.7)',
+              'rgba(121, 85, 72, 0.7)',
+              'rgba(158, 158, 158, 0.7)',
+              'rgba(96, 125, 139, 0.7)',
+              'rgba(3, 169, 244, 0.3)',
+              'rgba(244, 67, 54, 0.3)',
+              'rgba(233, 30, 99, 0.3)',
+              'rgba(156, 39, 176, 0.3)',
+              'rgba(63, 81, 181, 0.3)',
+              'rgba(0, 188, 212, 0.3)',
+              'rgba(0, 150, 136, 0.3)',
+              'rgba(76, 175, 80, 0.3)',
+              'rgba(205, 220, 57, 0.3)',
+              'rgba(255, 235, 59, 0.3),',
+              'rgba(255, 152, 0, 0.3)',
+              'rgba(121, 85, 72, 0.3)',
+              'rgba(158, 158, 158, 0.3)',
+              'rgba(96, 125, 139, 0.3)',
+               'rgba(75, 192, 192, 1)',
+               'rgba(255, 159, 64, 1)',
+
             ],
             borderColor: [
               'rgba(255,99,132,1)',
@@ -131,7 +163,9 @@ import { stringify } from 'querystring';
               'rgba(255, 206, 86, 1)',
               'rgba(75, 192, 192, 1)',
               'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
+              'rgba(255, 159, 64, 1)',
+              'rgba(62, 69, 81, 0.3)',
+              'rgba(255, 255, 255, 0.3)',
             ],
             borderWidth: 1,
           }]

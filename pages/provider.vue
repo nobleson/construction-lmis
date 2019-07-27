@@ -16,10 +16,21 @@ export default {
   },
   data() {
     return {
-      currentComponent: 'providerView',
+      currentComponent: '',
       currentproviderData: null
     }
   },
+
+   mounted(){
+    var data = this.$route.params.data
+    if(data == null){
+      this.currentComponent = 'providerView'
+    }else{
+      this.currentproviderData = data
+       this.currentComponent = 'providerDetail'
+    }
+  },
+  
   methods: {
       changeCurrentComponent(event){
       this.currentproviderData = event.data;

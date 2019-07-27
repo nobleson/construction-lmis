@@ -3,16 +3,10 @@
   <div class="row justify-content-md-center mt-3">
     <div class="col-md-6">
         
-        <h1>Publications</h1>
+        <h1>Hello</h1>
         <br>
           <div>
-            <ul class="list-unstyled">
-              <b-media tag="li" v-for="post in postList" :key="post.id">
-                <img slot="aside" :src="post.coverpage" width="200" height="200" alt="Media Aside">
-                <h5 class="mt-0 mb-1">{{post.title}}</h5>
-                  <b-button variant="success"   @click="$emit('changeComponent',{component: 'publicationDetail', data: post})" class="">Read More ...</b-button>
-              </b-media>
-            </ul>
+            Hello
           </div>
         <br>
  
@@ -42,36 +36,33 @@ export default {
    data() {
       return {
         verticalWithin: 0,
-        postList: [],
+        traineeList:[],
          props: ['params'],
       }
     },
     mounted(){
-            this.createPosts();
-         //   console.log("component:"+JSON.stringify(this.params))
-    },
+           
+          console.log("component:"+JSON.stringify(this.params))
+    }, 
     computed: {
-        ...mapGetters({isPostLoading: 'post/getPostStatus' }),
-        processPosts: function(){
-            return this.postList
-        },
-         
-    
+       ...mapGetters({isTraineeLoading: 'trainees/getTraineeStatus' }),
+        processTrainees: function(){
+            return this.traineeList
+      },
          
     },
     methods: {
-      ...mapActions({loadPosts: 'post/loadPosts'}),
-        createPosts() {
+     ...mapActions({loadTrainees: 'trainees/loadTrainees'}),
+      createTrainees() {
           let self = this
-          this.loadPosts().then(list => self.getExistingPostList(list)).catch(function(error){console.log(error.message)});
-        
+          this.loadTrainees().then(list => self.getExistingTraineeList(list)).catch(function(error){console.log(error.message)});
         },
-      getExistingPostList(list){
+      getExistingTraineeList(list){
         if(list){
-         return this.postList = list
+         //console.log('Trainee:'+JSON.stringify(list)) 
+         return this.traineeList = list
         }
-      }, 
-        
+      },
       linkClass(idx) {
         if (this.tabIndex === idx) {
           return ['bg-primary', 'text-light']
@@ -86,6 +77,8 @@ export default {
 .loop-container {
   padding: 3rem;
 }
+
+
 
 @media only screen and (min-width: 600px) {
   /* For tablets: */

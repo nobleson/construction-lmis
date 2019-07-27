@@ -22,7 +22,9 @@ void (function updateModules() {
   resolveStoreModules(require('..\\store\\company.js'), 'company.js')
   resolveStoreModules(require('..\\store\\post.js'), 'post.js')
   resolveStoreModules(require('..\\store\\provider.js'), 'provider.js')
+  resolveStoreModules(require('..\\store\\regulatorybodies.js'), 'regulatorybodies.js')
   resolveStoreModules(require('..\\store\\trainees.js'), 'trainees.js')
+  resolveStoreModules(require('..\\store\\trainers.js'), 'trainers.js')
 
   // If the environment supports hot reloading...
 
@@ -34,7 +36,9 @@ void (function updateModules() {
       '..\\store\\company.js',
       '..\\store\\post.js',
       '..\\store\\provider.js',
+      '..\\store\\regulatorybodies.js',
       '..\\store\\trainees.js',
+      '..\\store\\trainers.js',
     ], () => {
       // Update `root.modules` with the latest definitions.
       updateModules()

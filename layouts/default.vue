@@ -47,29 +47,27 @@
         
         <b-nav-item  ></b-nav-item>
         <b-nav-item class="active" :to="{ name: 'index'}"><span class="text-white">Home</span></b-nav-item>
-        <b-nav-item :to="{ name: 'publication',params: {data: null}}" ><span class="text-white">Publication</span></b-nav-item>
-        <b-nav-item :to="{ name: 'provider'}" ><span class="text-white">Provider</span></b-nav-item>
-  
-
-         
-          <b-nav-item-dropdown  right>
-             <template slot="button-content"><span class="text-white">Company</span></template>
-              <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item href="#" >EShjjjjjjjjjjjjjh-----jjhj</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item href="#">EShjjjjjjjjjjjjjhjj----jjhj</b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item href="#">EShjjjjjjjjjjjjjhjj----jjFA</b-dropdown-item>
-        </b-nav-item-dropdown>
-
+        <b-nav-item :to="{ name: 'publication',params: {data: null}}" ><span class="text-white">Publications</span></b-nav-item>
+        <b-nav-item :to="{ name: 'company',params: {data: null}}" ><span class="text-white">Companies</span></b-nav-item>
+        
         <b-nav-item-dropdown right>
           <!-- Using 'button-content' slot -->
-          <template slot="button-content"><span class="text-white">Other Menu</span></template>
+          <template slot="button-content"><span class="text-white">Training Providers</span></template>
               <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item href="#">EShjjjjjjjjjjjjjhjjjjjfsjfsfsfjhsfhjFA</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'provider',params: {data: null}}"><span style="font-size:18px">Providers Detail</span></b-dropdown-item>
               <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item href="#">Sign OutEShjjjjjjjjjjjjjhjjjjjfsjfsfsfjhsfhjFA</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'trainer',params: {data: null}}"> <span style="font-size:18px">Trainers</span></b-dropdown-item>
+             <b-dropdown-divider></b-dropdown-divider>
+          <b-dropdown-item :to="{ name: 'trainee',params: {data: null}}"><span style="font-size:18px">Trainees</span></b-dropdown-item>
+             <b-dropdown-divider></b-dropdown-divider>
+          <b-dropdown-item :to="{ name: 'artisan',params: {data: null}}"><span style="font-size:18px">Artisans</span></b-dropdown-item>
         </b-nav-item-dropdown>
+        
+
+        <b-nav-item :to="{ name: 'regulatorybody',params: {data: null}}" ><span class="text-white">Regulatory Bodies</span></b-nav-item>
+        <b-nav-item :to="{ name: 'assessor',params: {data: null}}" ><span class="text-white" disabled="assessor">Assessor</span></b-nav-item>
+
+
       </b-navbar-nav>
         </b-collapse>
   </b-navbar>
@@ -84,7 +82,7 @@
   <button type="button" class="btn btn-info btn-to-top"><i class="fa fa-chevron-up"></i></button>
 </back-to-top>
 
-  <mdb-footer style="background-color:#263238" class="page-footer font-small pt-0">
+  <mdb-footer style="background-color:#263238" class="page-footer font-small pt-0 float-center">
             <div style="background-color:#263238">
                 <mdb-container class="text-left">
                     <mdb-row class="py-4 d-flex align-items-center">
@@ -104,7 +102,7 @@
             </div>
         <div >
              
-              <mdb-row class="mt-3 justify-content-center container" >
+              <mdb-row class="mt-3 container" >
                     <mdb-col md="3" lg="4" xl="3" class="mb-4">
                         <h6 class="text-uppercase font-weight-bold"><strong>C-LMIS</strong></h6>
                         <hr class="green accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px"/>
@@ -272,8 +270,7 @@ li a {
   color: #2BBBAD;
 }
 li:hover {
-  background: #008751;
-  color: white;
+  color: #008751;
   cursor: pointer;
 
 }
@@ -296,7 +293,6 @@ li {
  font-size:20px;
  transition-duration: 0.7s;
 }
-
 
   .logo{
       padding-top: 1%;

@@ -213,7 +213,6 @@
   </div>
 
     <!--- side column--->
-      
    <mdb-col md="3" class="post">
         
           <h3 class="font-weight-bold"> Recent Publications</h3>
@@ -240,7 +239,7 @@
         </mdb-col>
 
 
-    <mdb-col md="3" class="mb-3">
+    <mdb-col md="3" >
 
       <div class="aside">
 
@@ -253,7 +252,50 @@
      
       <mdb-row>
         <mdb-col md="12" xl="2" lg="2" class="gradient">
-          <p>Hello Chart Section</p>
+            <mdb-card cascade class="cascading-admin-card mt-3">
+            <div class="admin-up mt-1">
+             <h3><mdb-badge v-if="isTrainerLoading == false" style="background-color:#008751">{{trainerList.length}}</mdb-badge></h3>
+                <b-spinner  v-if="isTrainerLoading" variant="warning" type="grow" label="Spinning"></b-spinner>
+            </div>
+            <mdb-card-body class="text-center">
+            <mdb-card-title>Trainers</mdb-card-title>
+            <b-link :to="{ name: 'trainer', params: {data: null}}"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
+          </mdb-card-body>
+          </mdb-card>
+          <mdb-card cascade class="cascading-admin-card mt-3">
+            <div class="admin-up mt-1">
+             <h3>
+               <mdb-badge v-if="isTraineeLoading == false" style="background-color:#008751">{{traineeList.length}}</mdb-badge>
+               <b-spinner  v-if="isTraineeLoading" variant="warning" type="grow" label="Spinning"></b-spinner></h3>
+            </div>
+            <mdb-card-body class="text-center">
+            <mdb-card-title> Trainees</mdb-card-title>
+            <b-link :to="{ name: 'trainee', params: {data: null}}" ><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
+          </mdb-card-body>
+          </mdb-card>
+      
+          <mdb-card cascade class="cascading-admin-card mt-3">
+            <div class="admin-up mt-1">
+             <h3><mdb-badge  v-if="isArtisanLoading == false"  style="background-color:#008751">{{ artisanList.length}}</mdb-badge></h3>
+               <b-spinner  v-if="isArtisanLoading" variant="warning" type="grow" label="Spinning"></b-spinner>
+            </div>
+            <mdb-card-body class="text-center">
+            <mdb-card-title>Artisans</mdb-card-title>
+            <b-link :to="{ name: 'artisan', params: {data: null}}"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
+          </mdb-card-body>
+          </mdb-card>
+          
+          <mdb-card cascade class="cascading-admin-card mt-3">
+            <div class="admin-up mt-1">
+             <h3><mdb-badge v-if="isRegulatoryBodyLoading == false" style="background-color:#008751">{{ regulatorybodiesList.length}}</mdb-badge></h3>
+                  <b-spinner  v-if="isRegulatoryBodyLoading" variant="warning" type="grow" label="Spinning"></b-spinner>
+            </div>
+            <mdb-card-body class="text-center">
+            <mdb-card-title>Regulatory Bodies</mdb-card-title>
+            <b-link :to="{ name: 'regulatorybody', params: {data: regulatoryData}}"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
+          </mdb-card-body>
+          </mdb-card>
+
         </mdb-col>
         <mdb-col md="12" xl="8" lg="8" >
          <mdb-container style="overflow-x: auto">
@@ -267,20 +309,19 @@
                     </mdb-list-group-item>
                      <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
                     </mdb-list-group-item>
-                     <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
                     </mdb-list-group-item>
-                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>14</mdb-badge>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
                     </mdb-list-group-item>
                      <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
-                    </mdb-list-group-item>
-                     <mdb-list-group-item style="font-size:20px">The Sixth Item<mdb-badge color="primary" pill>14</mdb-badge>
                     </mdb-list-group-item>
                   </mdb-list-group>   
                   </mdb-card-body>            
                 </mdb-card>
               <area shape="rect" slot="reference" alt="" title="" coords="213,20,327,95" href="#" target="" />
               </mdb-tooltip>
-
               <area shape="rect" alt="" title="Kebbi" coords="107,113,181,235" href="#" target="" />
               <area shape="rect" alt="" title="Zamfara" coords="322,102,404,192" href="#" target="" />
               <area shape="rect" alt="" title="Katsina" coords="456,87,509,188" href="#" target="" />
@@ -288,7 +329,7 @@
               <area shape="rect" alt="" title="Oyo" coords="38,445,128,530" href="#" target="" />
               <area shape="rect" alt="" title="Kano" coords="554,136,614,215" href="#" target="" />
               <area shape="rect" alt="" title="Jigawa" coords="650,99,739,156" href="#" target="" />
-              <area shape="rect" alt="" title="Abuja" coords="419,405,466,443" href="#" target="" />
+              <area shape="rect" alt="" title="FCT" coords="419,405,466,443" href="#" target="" />
               <area shape="rect" alt="" title="Nasarawa" coords="495,420,615,475" href="#" target="" />
               <area shape="rect" alt="" title="Benue" coords="539,518,696,580" href="#" target="" />
               <area shape="rect" alt="" title="Taraba" coords="744,450,873,557" href="#" target="" />
@@ -316,16 +357,16 @@
               <area shape="rect" alt="" title="Edo" coords="308,568,384,625" href="#" target="" />
               <area shape="rect" alt="" title="Lagos" coords="49,609,138,624" href="#" target="" />
               <area shape="rect" alt="" title="Niger" coords="219,289,412,405" href="#" target="" />
-             <area shape="rect" alt="" title="Ogun" coords="19,546,107,600" href="#" target="" />
-             <area shape="rect" alt="" title="Kwara" coords="172,403,262,483" href="#" target="" />
-              
-              </map>
+             <area shape="rect"  alt=""  title="Ogun" coords="19,546,107,600" href="#" target="" />
+             <area shape="rect"  alt="" title="Kwara" coords="172,403,262,483" href="#" target="" />  
+            </map>
 
           <img src="~/assets/images/map.jpg" class="img-fluid" alt="Responsive image" usemap="#map_of_nigeria" style="max-width: 1200px; max-height:800px">
           </mdb-container>
         </mdb-col>
-         <mdb-col md="12" xl="2" lg="2" class="gradient text-center">
-           <mdb-card cascade class="cascading-admin-card mt-3">
+         
+        <mdb-col md="12" xl="2" lg="2" class="gradient">
+          <mdb-card cascade class="cascading-admin-card mt-3">
             <div class="admin-up mt-1">
              <h3>
                <mdb-badge v-if="isProviderLoading == false" style="background-color:#008751">{{providerList.length}}</mdb-badge>
@@ -333,7 +374,7 @@
             </div>
             <mdb-card-body class="text-center">
             <mdb-card-title> Registered Training Providers</mdb-card-title>
-            <b-link to="provider"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
+            <b-link :to="{ name: 'provider', params: {data: null}}"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
           </mdb-card-body>
           </mdb-card>
       
@@ -344,7 +385,7 @@
             </div>
             <mdb-card-body class="text-center">
             <mdb-card-title>Registered Construction Companies</mdb-card-title>
-            <b-link to="company"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
+            <b-link  :to="{ name: 'company', params: {data: null}}"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
           </mdb-card-body>
           </mdb-card>
           
@@ -366,7 +407,7 @@
             </div>
             <mdb-card-body class="text-center">
             <mdb-card-title>Puplications</mdb-card-title>
-            <b-link to="publication"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
+            <b-link :to="{ name: 'publication', params: {data: null}}"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
           </mdb-card-body>
           </mdb-card>
         </mdb-col>
@@ -454,6 +495,11 @@ export default {
         labels: [],
         data: []
       },
+      traineeList:[],
+      artisanList:[],
+      regulatorybodiesList:[],
+      trainerList:[],
+
       slide:0,
       slide:null,
       show1: false,
@@ -559,14 +605,18 @@ export default {
     this.createCompanies();
     this.createAssesors();
     this.createPosts();
+    this.createTrainees();
+    this. createTrainers();
+    this.createArtisans();
+    this.createRegulatoryBodies();
   },
     computed: {
-        ...mapGetters({isProviderLoading: 'provider/getProviderStatus', isCompanyLoading:'company/getCompanyStatus', isAssesorLoading:'assessors/getAssesorStatus', isPostLoading:'post/getPostStatus' }),
+        ...mapGetters({isProviderLoading: 'provider/getProviderStatus', isCompanyLoading:'company/getCompanyStatus', isAssesorLoading:'assessors/getAssesorStatus', isPostLoading:'post/getPostStatus', isTraineeLoading:'trainees/getTraineeStatus', isTrainerLoading:'trainers/getTrainerStatus', isArtisanLoading:'artisans/getArtisanStatus', isRegulatoryBodyLoading:'regulatorybodies/getRegulatoryBodiesStatus' }),
         processProviders: function(){
               return this.providerList
         },
         generateMapDataset(){
-         
+          this.mapDataSet.coordinates.push({coords:"213,20,327,95",state: 'Sokoto'})
           this.mapDataSet.coordinates.push({coords:"107,113,181,235",state: 'Kebbi'})
           this.mapDataSet.coordinates.push({coords:"322,102,404,192",state: 'Zamfara'})
           this.mapDataSet.coordinates.push({coords:"456,87,509,188",state: 'Katsina'})
@@ -574,7 +624,7 @@ export default {
           this.mapDataSet.coordinates.push({coords:"38,445,128,530",state: 'Oyo'})
           this.mapDataSet.coordinates.push({coords:"554,136,614,215",state: 'Kano'})
           this.mapDataSet.coordinates.push({coords:"650,99,739,156",state: 'Jigawa'})
-          this.mapDataSet.coordinates.push({coords:"419,405,466,443",state: 'Abuja'})
+          this.mapDataSet.coordinates.push({coords:"419,405,466,443",state: 'FCT'})
           this.mapDataSet.coordinates.push({coords:"495,420,615,475",state: 'Nasarawa'})
           this.mapDataSet.coordinates.push({coords:"539,518,696,580",state: 'Benue'})
           this.mapDataSet.coordinates.push({coords:"744,450,873,557",state: 'Taraba'})
@@ -607,7 +657,7 @@ export default {
         }        
     },
   methods: {
- ...mapActions({loadProviders: 'provider/loadProviders', loadCompanies:'company/loadCompanies', loadAssesors:'assessors/loadAssesors',  loadPosts:'post/loadPosts' }),
+ ...mapActions({loadProviders: 'provider/loadProviders', loadCompanies:'company/loadCompanies', loadAssesors:'assessors/loadAssesors',  loadPosts:'post/loadPosts', loadTrainees:'trainees/loadTrainees', loadTrainers:'trainers/loadTrainers', loadArtisans:'artisans/loadArtisans', loadRegulatoryBodies:'regulatorybodies/loadRegulatoryBodies'  }),
       createProviders() {
           let self = this
           this.loadProviders().then(list => self.getExistingProviderList(list)).catch(function(error){console.log(error.message)});
@@ -681,6 +731,49 @@ export default {
         }
       },
 
+      createTrainers() {
+          let self = this
+          this.loadTrainers().then(list => self.getExistingTrainerList(list)).catch(function(error){console.log(error.message)});
+        },
+      getExistingTrainerList(list){
+        if(list){
+         //console.log('Trainee:'+JSON.stringify(list)) 
+         return this.trainerList = list
+        }
+      },
+
+      createTrainees() {
+          let self = this
+          this.loadTrainees().then(list => self.getExistingTraineeList(list)).catch(function(error){console.log(error.message)});
+        },
+      getExistingTraineeList(list){
+        if(list){
+         //console.log('Trainee:'+JSON.stringify(list)) 
+         return this.traineeList = list
+        }
+      },
+
+      createArtisans() {
+          let self = this
+          this.loadArtisans().then(list => self.getExistingArtisanList(list)).catch(function(error){console.log(error.message)});
+        },
+      getExistingArtisanList(list){
+        if(list){
+         //console.log('Artisan:'+JSON.stringify(list)) 
+         return this.artisanList= list
+        }
+      },
+
+      createRegulatoryBodies() {
+          let self = this
+          this.loadRegulatoryBodies().then(list => self.getExistingRegulatoryBodiesList(list)).catch(function(error){console.log(error.message)});
+        },
+      getExistingRegulatoryBodiesList(list){
+        if(list){
+         //console.log('Bodies:'+JSON.stringify(list)) 
+         return this.regulatorybodiesList= list
+        }
+      },
      
     changeCurrentComponent(newComponent) {
       this.currentComponent = newComponent;
@@ -854,7 +947,8 @@ h4 {
    z-index: -1;
  }
 .gradient{
-  padding-left: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
  
 }
   .logo{

@@ -16,8 +16,17 @@ export default {
   },
   data() {
     return {
-      currentComponent: 'companiesView',
+      currentComponent: '',
       currentcompanyData: null
+    }
+  },
+    mounted(){
+    var data = this.$route.params.data
+    if(data == null){
+      this.currentComponent = 'companiesView'
+    }else{
+      this.currentpublicationData = data
+       this.currentComponent = 'companiesDetail'
     }
   },
   methods: {
