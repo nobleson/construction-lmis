@@ -21,13 +21,10 @@
                         <p>{{publicationData.author}}</p>
                        <hr style="border-top: dotted 1px;" />
 
-                        <p>Date Created</p>
+                        <p>Date Published</p>
                         <p>{{publicationData.dateCreated}}</p>
                        <hr style="border-top: dotted 1px;" />
 
-                        <p><strong>Date Published</strong></p>
-                        <p>{{publicationData.datePublished}}</p>
-                        
                       <hr style="border-top: dotted 1px;" />
 
                         </div>
@@ -70,10 +67,6 @@
                 <h5 class="font-weight-bold mb-1">
                     <strong>{{publicationData.title}}</strong>
                 </h5>
-                <h6 class="font-weight-bold mb-1">
-                    <strong>{{publicationData.title}}</strong>
-                </h6>
-
 
                    <p class="dark-grey-text">
                        {{publicationData.type}}

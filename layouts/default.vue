@@ -46,13 +46,13 @@
     <b-navbar-nav class="ml-auto"  >
         
         <b-nav-item  ></b-nav-item>
-        <b-nav-item class="active" :to="{ name: 'index'}"><span class="text-white">Home</span></b-nav-item>
-        <b-nav-item :to="{ name: 'publication',params: {data: null}}" ><span class="text-white">Publications</span></b-nav-item>
-        <b-nav-item :to="{ name: 'company',params: {data: null}}" ><span class="text-white">Companies</span></b-nav-item>
+        <b-nav-item class="active" :to="{ name: 'index'}" style="font-size:18px"><span class="text-white">Home</span></b-nav-item>
+        <b-nav-item :to="{ name: 'publication',params: {data: null}}" style="font-size:18px"><span class="text-white">Publications</span></b-nav-item>
+        <b-nav-item :to="{ name: 'company',params: {data: null}}" style="font-size:18px"><span class="text-white">Companies</span></b-nav-item>
         
         <b-nav-item-dropdown right>
           <!-- Using 'button-content' slot -->
-          <template slot="button-content"><span class="text-white">Training Providers</span></template>
+          <template slot="button-content" style="font-size:20px"><span class="text-white" style="font-size:20px">Training Providers</span></template>
               <b-dropdown-divider></b-dropdown-divider>
           <b-dropdown-item :to="{ name: 'provider',params: {data: null}}"><span style="font-size:18px">Providers Detail</span></b-dropdown-item>
               <b-dropdown-divider></b-dropdown-divider>
@@ -64,8 +64,7 @@
         </b-nav-item-dropdown>
         
 
-        <b-nav-item :to="{ name: 'regulatorybody',params: {data: null}}" ><span class="text-white">Regulatory Bodies</span></b-nav-item>
-        <b-nav-item :to="{ name: 'assessor',params: {data: null}}" ><span class="text-white" disabled="assessor">Assessor</span></b-nav-item>
+        <b-nav-item :to="{ name: 'regulatorybody',params: {data: null}}" ><span class="text-white" style="font-size:20px">Regulatory Bodies</span></b-nav-item>
 
 
       </b-navbar-nav>
@@ -218,51 +217,7 @@ h4 {
   font-weight: bold;
 }
 
-.collapse {
-  transition: height 0.3s;  
-}
-.collapse-item {
-  transition: all 0.5s;  
-}
-.gradient-card {
-  transition: 0.5s ease-in-out; 
-}
-.gradient-card.show {
-  margin-top: 20px;
-}
-.gradient-card .card-image {
-  display: inline-block;
-  width: 100%;
-  transition: 0.5s ease-in-out; 
-}
-.gradient-card.show .card-image {
-  width: 112px;
-  height: 112px;
-  margin-left: 20px;
-  margin-top: -20px;
-}
-.gradient-card .card-body {
-  padding: 0 1.25rem;
-}
-.collapse-content .fas.fa-heart:hover {
-  color: #f44336 !important;
-}
-.collapse-content .fas.fa-share-alt:hover {
-  color: #0d47a1 !important;
-}
-.card.weather-card .collapse-content a.collapsed:after {
-  content: 'Expand'; }
 
-.card.weather-card .collapse-content a:not(.collapsed):after {
-  content: 'Collapse'; }
-
-.card.chart-card .classic-tabs .nav.tabs-white li a {
-  color: #757575;
-  font-weight: 500;
-}
-.card.chart-card .classic-tabs .nav.tabs-white li a.active {
-  color: #673ab7;
-}
 .wrapper {
    overflow-x: hidden;
  }
@@ -290,7 +245,7 @@ ul{
 li {
  position: relative;
  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
- font-size:20px;
+ font-size:10px;
  transition-duration: 0.7s;
 }
 

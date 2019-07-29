@@ -1,7 +1,6 @@
 <template>
     <div class="container">
-       <h1> All Artisans in all state </h1>
-        I think see myself
-
+       <h1> Artisans View </h1>
+       
     </div>
 </template>

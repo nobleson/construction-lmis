@@ -1,7 +1,7 @@
 <template>
  <section class="mt-2">
    <div class="row">
-  <div class="col-s-6">
+  <div class="col-s-5">
 <section>
    <mdb-col>
         <b-carousel
@@ -12,7 +12,7 @@
           img-width="1024"
           img-height="480"
           style="text-shadow: 1px 1px 2px #333;"
-          class="gradient"
+          class="carousal"
         >
 
           <!-- Slides with image only -->
@@ -65,7 +65,7 @@
  </section>
 
   <section>
-   <div class="gradient2">
+   <div class="ml-4 mr-3 mt-2">
      <mdb-card class="mb-4">
       <mdb-card-body class="d-sm-flex justify-content-between">
       
@@ -73,234 +73,171 @@
 
       </mdb-card-body>
     </mdb-card>
-    <!-- Multiple Carousal -->
-    <mdb-carousel :interval="4000" show multi slide indicators :floating="true" >
+  </div>
+  <b-card class="ml-4 mr-2">
+    <b-card-header style="font-size:24px; font-weight:bold" class="text-center">N-POWER BUILD PROGRAMME</b-card-header>
+    <b-card-body>
+      <mdb-row>
+      <mdb-carousel :interval="4000" show multi slide indicators :floating="true" >
       <mdb-carousel-item>
-        <mdb-row>
-          <mdb-col md="3" class="mb-3">
-            <mdb-card class="classic-admin-card brown accent-2">
-              <mdb-card-body>
-                <div class="pull-right">
-                  <img src="~/assets/images/favicon-32x32.png"/>
-                </div>
-                <p class="white-text">Regulatory Bodies</p>
-                <h4><strong>2000</strong></h4>
-              </mdb-card-body>
-            <mdb-card-body>
-              <p>Available Regulatory Bodies </p>
-            </mdb-card-body>
-          </mdb-card>
-        </mdb-col>
-        <mdb-col md="3" class="mb-3">
-          <mdb-card class="classic-admin-card secondary-color">
-            <mdb-card-body>
-              <div class="pull-right">
-                 <img src="~/assets/images/Assmt bodies icon.png"/>
-              </div>
-              <p class="white-text">Assesment Bodies</p>
-              <h4><strong>2000</strong></h4>
-            </mdb-card-body>
-           
-            <mdb-card-body>
-              <p>Available Assesment Bodies</p>
-            </mdb-card-body>
-          </mdb-card>
-        </mdb-col>
-       
-       <mdb-col md="3" class="mb-3">
-          <mdb-card class="classic-admin-card primary-color">
-            <mdb-card-body>
-              <div class="pull-right">
-                <mdb-icon icon="award" width="" height=""/>
-              </div>
-              <p class="white-text">Awarding Bodies</p>
-              <h4><strong>5000</strong></h4>
-            </mdb-card-body>
-         
-            <mdb-card-body>
-              <p>Available Awarding Bodies</p>
-            </mdb-card-body>
-          </mdb-card>
-        </mdb-col>
-
-         <mdb-col md="3" class="mb-3">
-          <mdb-card class="classic-admin-card green">
-            <mdb-card-body>
-              <div class="pull-right">
-                  <img src="~/assets/images/licence Icon.png" size="36x36"/>
-              </div>
-              <p class="white-text">Licensing Bodies</p>
-              <h4><strong>6000</strong></h4>
-            </mdb-card-body>
-          
-            <mdb-card-body>
-              <p>Available Licensing Bodies</p>
-            </mdb-card-body>
-          </mdb-card>
-        </mdb-col>
-        </mdb-row>
+        	<mdb-row>
+			<mdb-card-group class="ml-1" deck>
+				<mdb-card col="3 " class="blue accents-2">
+						<mdb-view hover>
+              <img class="card-img-top" src="~/assets/images/npower.png" alt="Card image cap">
+						<a href="#!">
+						 <h4 class="text-center">
+               <mdb-badge  v-if="isTraineeLoading === false" color="warning" style="font-size:25px;" class="mt-2">{{traineeList.length}}</mdb-badge>
+              <b-spinner   v-if="isTraineeLoading" variant="warning" type="grow" label="Spinning"></b-spinner>
+             </h4>
+							<mdb-mask flex-center waves overlay="white-slight"></mdb-mask>
+						</a>
+					</mdb-view>
+					<mdb-card-body>
+						<mdb-card-title class="text-white text-center" style="font-size:19px; font-weight:bold">Trainees </mdb-card-title>
+					</mdb-card-body>
+				</mdb-card>
+				<mdb-card col="3" class="secondary-color">		
+            <mdb-view hover>
+             <img class="card-img-top" src="~/assets/images/npower.png" alt="Card image cap">
+						<a href="#!">
+            <h4 class="text-center">
+               <mdb-badge   v-if="isTrainerLoading === false" color="warning" style="font-size:25px;" class="mt-2">{{trainerList.length}}</mdb-badge>
+                  <b-spinner   v-if="isTrainerLoading" variant="warning" type="grow" label="Spinning"></b-spinner>
+             </h4>						
+             	<mdb-mask flex-center waves overlay="white-slight"></mdb-mask>
+						</a>
+					</mdb-view>
+					<mdb-card-body>
+						<mdb-card-title class="text-white text-center" style="font-size:19px; font-weight:bold">Trainers</mdb-card-title>
+					</mdb-card-body>
+				</mdb-card>
+        <mdb-card col="3" style="background:grey">
+					<mdb-view hover>
+             <img class="card-img-top" src="~/assets/images/npower.png" alt="Card image cap">
+						<a href="#!">
+              <h4 class="text-center">
+               <mdb-badge  v-if="isProviderLoading === false" color="warning" style="font-size:25px;" class="mt-2">{{providerList.length}}</mdb-badge>
+                  <b-spinner   v-if="isProviderLoading" variant="warning" type="grow" label="Spinning"></b-spinner>
+              </h4>
+							<mdb-mask flex-center waves overlay="white-slight"></mdb-mask>
+						</a>
+					</mdb-view> 
+					<mdb-card-body>
+						<mdb-card-title class="text-white text-center" style="font-size:19px; font-weight:bold">Training Providers</mdb-card-title>
+					</mdb-card-body>
+				</mdb-card>
+				<mdb-card col="3" class=" green accent 2 mr-5">
+					<mdb-view hover>
+             <img class="card-img-top" src="~/assets/images/npower.png" alt="Card image cap">
+						<a href="#!">
+             <h4 class="text-center">
+               <mdb-badge  v-if="isApprenticeLoading === false" color="warning" style="font-size:25px;" class="mt-2">{{apprenticeList.length}}</mdb-badge>
+                 <b-spinner   v-if="isApprenticeLoading" variant="warning" type="grow" label="Spinning"></b-spinner>
+             </h4>							
+             <mdb-mask flex-center waves overlay="white-slight"></mdb-mask>
+						</a>
+					</mdb-view>
+					<mdb-card-body>
+						<mdb-card-title class="text-white text-center" style="font-size:16px; font-weight:bold">Apprentice</mdb-card-title>
+					</mdb-card-body>
+				</mdb-card>
+			</mdb-card-group>
+		</mdb-row>
       </mdb-carousel-item>
-  
-      <mdb-carousel-item>
-       <mdb-row>
-          <mdb-col md="3" class="mb-3">
-            <mdb-card class="classic-admin-card1 grey">
-              <mdb-card-body>
-                <div class="pull-right">
-                  <img src="~/assets/images/artisan.png"/>
-                </div>
-                <p class="white-text">Artisans & Craftmen</p>
-                <h4><strong>1000</strong></h4>
-              </mdb-card-body>
-            <mdb-card-body>
-              <p>Available Artisans </p>
-            </mdb-card-body>
-          </mdb-card>
-        </mdb-col>
-        <mdb-col md="3" class="mb-3">
-          <mdb-card class="classic-admin-card1 green">
-            <mdb-card-body>
-              <div class="pull-right">
-                 <img src="~/assets/images/const.png"/>
-              </div>
-              <p class="white-text">Companies</p>
-              <h4><strong>6000</strong></h4>
-            </mdb-card-body>
-           
-            <mdb-card-body>
-              <p>Companies Registered</p>
-            </mdb-card-body>
-          </mdb-card>
-        </mdb-col>
-       
-       <mdb-col md="3" class="mb-3">
-          <mdb-card class="classic-admin-card1 grey accents">
-            <mdb-card-body>
-              <div class="pull-right">
-                <mdb-icon icon="newspaper" />
-              </div>
-              <p class="white-text">Articles</p>
-              <h4><strong>7000</strong></h4>
-            </mdb-card-body>
-         
-            <mdb-card-body>
-              <p>Total Articles</p>
-            </mdb-card-body>
-          </mdb-card>
-        </mdb-col>
-
-         <mdb-col md="3" class="mb-3">
-          <mdb-card class="classic-admin-card1 warning-color accent-2">
-            <mdb-card-body>
-              <div class="pull-right">
-                  <img src="~/assets/images/licence Icon.png" size="36x36"/>
-              </div>
-              <p class="white-text">Accessors</p>
-              <h4><strong>8000</strong></h4>
-            </mdb-card-body>
-          
-            <mdb-card-body>
-              <p>Total Accessors</p>
-            </mdb-card-body>
-          </mdb-card>
-        </mdb-col>  
+      </mdb-carousel>
       </mdb-row>
-      </mdb-carousel-item>
-        
-    </mdb-carousel>
-  </div>   
-    </section>
+    </b-card-body>
+  </b-card>
+   </section>
   </div>
 
     <!--- side column--->
-   <mdb-col md="3" class="post">
-        
-          <h3 class="font-weight-bold"> Recent Publications</h3>
-          <div>
-           
-              <b-media v-for="post in postList" :key="post.id">
-                <img slot="aside" :src="post.coverpage" width="200" height="200" alt="Media Aside">
-               <b-link :to="{ name: 'publication',params: {data: post}}">
-                   <h5 class="mt-0">
-                       {{post.title}}
-                   </h5>
-               </b-link>
-                
-                <p>
-                 {{post.aboutAuthor}}
-                </p>
-              </b-media>
-
+   <mdb-col md="2" class="post">
+    <h3 class="font-weight-bold"> Recent Publications</h3>
+    <div>
+        <b-link :to="{ name: 'publication',params: {data: null}}">
+          <b-card
+            overlay
+            :img-src="post.coverpage"
+            img-alt="Card Image"
+            text-variant="success"
+            v-for="post in postList" :key="post.id"
+          > 
+            <b-card-text>
+                <div  class="text-white text-center rgba-black-strong mt-2" >
+                  <h4>{{post.title}}</h4>
+                  </div>
+                        
+            </b-card-text>
+          </b-card>
+          </b-link>
            <div class="text-center" v-if="isPostLoading"> 
                 <b-spinner  v-if="isPostLoading" variant="success" type="grow" label="Spinning"></b-spinner>
-                </div>
+           </div>
           </div>
-         
         </mdb-col>
 
 
     <mdb-col md="3" >
-
-      <div class="aside">
-
         
+       <b-card>
+         <b-card-header style="font-size:24px; font-weight:bold" class="text-center">Featured Jobs</b-card-header>
+       
+        <b-card-body>
+          </b-card-body>
+       </b-card>
       
-        </div>
+      </mdb-col>
 
+       <mdb-col md="2" class="mr-0.8" >
+         <b-card>
+         <b-card-header style="font-size:14px; font-weight:bold" class="text-center">Jobs by State</b-card-header>
+          <b-card-body>
+             <ul>
+              <li><a href="#">Adamawa</a></li>
+              <br>
+              <li><a href="#">Abia</a></li>
+              <br>
+              <li><a href="#">Anambra</a></li>
+              <br>
+              <li><a href="#">Kogi</a></li>
+              <br>
+              <li><a href="#">Enugu</a></li>
+              <br>
+              <li> <a href="#">Benue</a></li>
+              </ul>
+          </b-card-body>
+          
+         </b-card>
+
+          <b-card class="mt-2">
+         <b-card-header style="font-size:14px; font-weight:bold" class="text-center">Jobs by Zone</b-card-header>
+          <b-card-body>
+            <ul>
+              <li><a href="#">North East</a></li>
+              <br>
+              <li><a href="#">North West</a></li>
+              <br>
+              <li><a href="#">North Central</a></li>
+              <br>
+              <li><a href="#">South West</a></li>
+              <br>
+              <li><a href="#">South East</a></li>
+              <br>
+              <li> <a href="#">South South</a></li>
+              </ul>
+          </b-card-body>
+         </b-card>
+        
       </mdb-col>
     </div>
      
-      <mdb-row>
-        <mdb-col md="12" xl="2" lg="2" class="gradient">
-            <mdb-card cascade class="cascading-admin-card mt-3">
-            <div class="admin-up mt-1">
-             <h3><mdb-badge v-if="isTrainerLoading == false" style="background-color:#008751">{{trainerList.length}}</mdb-badge></h3>
-                <b-spinner  v-if="isTrainerLoading" variant="warning" type="grow" label="Spinning"></b-spinner>
-            </div>
-            <mdb-card-body class="text-center">
-            <mdb-card-title>Trainers</mdb-card-title>
-            <b-link :to="{ name: 'trainer', params: {data: null}}"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
-          </mdb-card-body>
-          </mdb-card>
-          <mdb-card cascade class="cascading-admin-card mt-3">
-            <div class="admin-up mt-1">
-             <h3>
-               <mdb-badge v-if="isTraineeLoading == false" style="background-color:#008751">{{traineeList.length}}</mdb-badge>
-               <b-spinner  v-if="isTraineeLoading" variant="warning" type="grow" label="Spinning"></b-spinner></h3>
-            </div>
-            <mdb-card-body class="text-center">
-            <mdb-card-title> Trainees</mdb-card-title>
-            <b-link :to="{ name: 'trainee', params: {data: null}}" ><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
-          </mdb-card-body>
-          </mdb-card>
-      
-          <mdb-card cascade class="cascading-admin-card mt-3">
-            <div class="admin-up mt-1">
-             <h3><mdb-badge  v-if="isArtisanLoading == false"  style="background-color:#008751">{{ artisanList.length}}</mdb-badge></h3>
-               <b-spinner  v-if="isArtisanLoading" variant="warning" type="grow" label="Spinning"></b-spinner>
-            </div>
-            <mdb-card-body class="text-center">
-            <mdb-card-title>Artisans</mdb-card-title>
-            <b-link :to="{ name: 'artisan', params: {data: null}}"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
-          </mdb-card-body>
-          </mdb-card>
-          
-          <mdb-card cascade class="cascading-admin-card mt-3">
-            <div class="admin-up mt-1">
-             <h3><mdb-badge v-if="isRegulatoryBodyLoading == false" style="background-color:#008751">{{ regulatorybodiesList.length}}</mdb-badge></h3>
-                  <b-spinner  v-if="isRegulatoryBodyLoading" variant="warning" type="grow" label="Spinning"></b-spinner>
-            </div>
-            <mdb-card-body class="text-center">
-            <mdb-card-title>Regulatory Bodies</mdb-card-title>
-            <b-link :to="{ name: 'regulatorybody', params: {data: regulatoryData}}"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
-          </mdb-card-body>
-          </mdb-card>
-
-        </mdb-col>
-        <mdb-col md="12" xl="8" lg="8" >
-         <mdb-container style="overflow-x: auto">
+      <mdb-row class="mt-3">
+        <mdb-col md="12" xl="8" lg="8">
+          <mdb-container style="overflow-x: auto">
             <map name="map_of_nigeria">
-             <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-tooltip trigger="hover" :options="{placement: 'bottom'}" style="color:#fff; font-family:Georgia, Verdana" >
                 <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
                   <mdb-card-title style="color:black">Sokoto Statistics</mdb-card-title>
                   <mdb-card-body >
@@ -322,99 +259,870 @@
                 </mdb-card>
               <area shape="rect" slot="reference" alt="" title="" coords="213,20,327,95" href="#" target="" />
               </mdb-tooltip>
-              <area shape="rect" alt="" title="Kebbi" coords="107,113,181,235" href="#" target="" />
-              <area shape="rect" alt="" title="Zamfara" coords="322,102,404,192" href="#" target="" />
-              <area shape="rect" alt="" title="Katsina" coords="456,87,509,188" href="#" target="" />
-              <area shape="rect" alt="" title="Kaduna" coords="469,238,573,379" href="#" target="" />
-              <area shape="rect" alt="" title="Oyo" coords="38,445,128,530" href="#" target="" />
-              <area shape="rect" alt="" title="Kano" coords="554,136,614,215" href="#" target="" />
-              <area shape="rect" alt="" title="Jigawa" coords="650,99,739,156" href="#" target="" />
-              <area shape="rect" alt="" title="FCT" coords="419,405,466,443" href="#" target="" />
-              <area shape="rect" alt="" title="Nasarawa" coords="495,420,615,475" href="#" target="" />
-              <area shape="rect" alt="" title="Benue" coords="539,518,696,580" href="#" target="" />
-              <area shape="rect" alt="" title="Taraba" coords="744,450,873,557" href="#" target="" />
-              <area shape="rect" alt="" title="Yobe" coords="823,70,949,187" href="#" target="" />
-              <area shape="rect" alt="" title="Ogun" coords="514,617,553,650" href="#" target="" />
-              <area shape="rect" alt="" title="Enugu" coords="449,592,495,642" href="#" target="" />
-              <area shape="rect" alt="" title="Ondo" coords="198,575,228,648" href="#" target="" />
-              <area shape="rect" alt="" title="Osun" coords="157,515,213,558" href="#" target="" />
-              <area shape="rect" alt="" title="Delta" coords="259,677,368,725" href="#" target="" />
-              <area shape="rect" alt="" title="Ekiti" coords="242,504,284,533" href="#" target="" />
-              <area shape="rect" alt="" title="Cross River" coords="554,662,609,740" href="#" target="" />
-              <area shape="rect" alt="" title="Imo" coords="414,682,456,718" href="#" target="" />
-              <area shape="rect" alt="" title="Bayelsa" coords="301,747,367,792" href="#" target="" />
-              <area shape="rect" alt="" title="Anambra" coords="411,622,438,662" href="#" target="" />
-              <area shape="rect" alt="" title="Abia" coords="477,678,493,722" href="#" target="" />
-              <area shape="rect" alt="" title="Akwa Ibom" coords="493,728,529,772" href="#" target="" />
-              <area shape="rect" alt="" title="Rivers" coords="398,733,448,778" href="#" target="" />
-              <area shape="rect" alt="" title="Kogi" coords="344,472,448,543" href="#" target="" />
-              <area shape="rect" alt="" title="Plateau" coords="645,368,746,440" href="#" target="" />
-              <area shape="rect" alt="" title="Bauchi" coords="640,248,775,336" href="#" target="" />
-              <area shape="rect" alt="" title="Gombe" coords="825,263,897,342" href="#" target="" />
-              <area shape="rect" alt="" title="Adamawa" coords="937,332,994,437" href="#" target="" />
-              <area shape="rect" alt="" title="Borno" coords="993,80,1108,228" href="#" target="" />
-              <area shape="rect" alt="" title="Ebonyi" coords="511,609,562,655" href="#" target="" />
-              <area shape="rect" alt="" title="Edo" coords="308,568,384,625" href="#" target="" />
-              <area shape="rect" alt="" title="Lagos" coords="49,609,138,624" href="#" target="" />
-              <area shape="rect" alt="" title="Niger" coords="219,289,412,405" href="#" target="" />
-             <area shape="rect"  alt=""  title="Ogun" coords="19,546,107,600" href="#" target="" />
-             <area shape="rect"  alt="" title="Kwara" coords="172,403,262,483" href="#" target="" />  
-            </map>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Kebbi Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="107,113,181,235" href="#" target="" />
+              </mdb-tooltip>
+              
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Zamfara Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="322,102,404,192" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Katsina Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="456,87,509,188" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Kaduna Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="469,238,573,379" href="#" target="" />
+              </mdb-tooltip>
+              
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Oyo Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="38,445,128,530" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Kano Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="554,136,614,215" href="#" target="" />
+              </mdb-tooltip>
+
+            <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Jigawa Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="650,99,739,156" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">FCT Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="419,405,466,443" href="#" target="" />
+              </mdb-tooltip>
+ 
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Nasarawa Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="495,420,615,475" href="#" target="" />
+              </mdb-tooltip>
+
+               <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Benue Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="539,518,696,580" href="#" target="" />
+              </mdb-tooltip>
+         
+               <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Taraba Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="Taraba" coords="744,450,873,557" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Ogun Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="823,70,949,187" href="#" target="" />
+              </mdb-tooltip>
+
+                <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Enugu Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="449,592,495,642" href="#" target="" />
+              </mdb-tooltip>
+  
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Ondo Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="198,575,228,648" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Osun Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="157,515,213,558" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Delta Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="259,677,368,725" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Ekiti Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="242,504,284,533" href="#" target="" />
+              </mdb-tooltip>
+          
+          <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Cross River Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="554,662,609,740" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Imo Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="414,682,456,718" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Bayelsa Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="301,747,367,792" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Anambra Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="411,622,438,662" href="#" target="" />
+              </mdb-tooltip>
+
+            <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Abia Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="477,678,493,722" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Akwa Ibom Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="493,728,529,772" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Rivers Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="398,733,448,778" href="#" target="" />
+              </mdb-tooltip>
+
+               <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Kogi Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="344,472,448,543" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Plateau Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="645,368,746,440" href="#" target="" />
+              </mdb-tooltip>
+
+              
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Bauchi Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="640,248,775,336" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Gombe Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="825,263,897,342" href="#" target="" />
+              </mdb-tooltip>
+
+               <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Adamawa Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="937,332,994,437" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Borno Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="993,80,1108,228" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Ebonyi Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="511,609,562,655" href="#" target="" />
+              </mdb-tooltip>
+
+               <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Edo Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="308,568,384,625" href="#" target="" />
+              </mdb-tooltip>
+
+               <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Lagos Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="49,609,138,624" href="#" target="" />
+              </mdb-tooltip>
+
+              <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Niger Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="219,289,412,405" href="#" target="" />
+              </mdb-tooltip>
+
+               <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Ogun Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="19,546,107,600" href="#" target="" />
+              </mdb-tooltip>
+
+                <mdb-tooltip trigger="hover" :options="{placement: 'top'}" style="color:#fff; font-family:Georgia, Verdana" >
+                <mdb-card class="card-body" style="width: 22rem; color:black" slot="tip">
+                  <mdb-card-title style="color:black">Kwara Statistics</mdb-card-title>
+                  <mdb-card-body >
+                  <mdb-list-group style="color:black; font-weight-bold">
+                    <mdb-list-group-item style="font-size:20px">Assessors<mdb-badge color="primary" pill>{{assessorList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Training Providers<mdb-badge color="primary" pill>{{providerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                      <mdb-list-group-item style="font-size:20px">Trainers<mdb-badge color="primary" pill>{{trainerList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                    <mdb-list-group-item style="font-size:20px">Trainees<mdb-badge color="primary" pill>{{traineeList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Artisans<mdb-badge color="primary" pill>{{artisanList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                     <mdb-list-group-item style="font-size:20px">Construction Companies<mdb-badge color="primary" pill>{{companyList.length}}</mdb-badge>
+                    </mdb-list-group-item>
+                  </mdb-list-group>   
+                  </mdb-card-body>            
+                </mdb-card>
+              <area shape="rect" slot="reference" alt="" title="" coords="172,403,262,483" href="#" target="" />
+              </mdb-tooltip>
+              </map>
 
           <img src="~/assets/images/map.jpg" class="img-fluid" alt="Responsive image" usemap="#map_of_nigeria" style="max-width: 1200px; max-height:800px">
-          </mdb-container>
+        </mdb-container>
         </mdb-col>
          
-        <mdb-col md="12" xl="2" lg="2" class="gradient">
-          <mdb-card cascade class="cascading-admin-card mt-3">
-            <div class="admin-up mt-1">
-             <h3>
-               <mdb-badge v-if="isProviderLoading == false" style="background-color:#008751">{{providerList.length}}</mdb-badge>
-               <b-spinner  v-if="isProviderLoading" variant="warning" type="grow" label="Spinning"></b-spinner></h3>
-            </div>
-            <mdb-card-body class="text-center">
-            <mdb-card-title> Registered Training Providers</mdb-card-title>
-            <b-link :to="{ name: 'provider', params: {data: null}}"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
-          </mdb-card-body>
-          </mdb-card>
-      
-          <mdb-card cascade class="cascading-admin-card mt-3">
-            <div class="admin-up mt-1">
-             <h3><mdb-badge  v-if="isCompanyLoading == false"  style="background-color:#008751">{{companyList.length}}</mdb-badge></h3>
-               <b-spinner  v-if="isCompanyLoading" variant="warning" type="grow" label="Spinning"></b-spinner>
-            </div>
-            <mdb-card-body class="text-center">
-            <mdb-card-title>Registered Construction Companies</mdb-card-title>
-            <b-link  :to="{ name: 'company', params: {data: null}}"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
-          </mdb-card-body>
-          </mdb-card>
+        <mdb-col md="12" xl="4" lg="4" class="gradient">
+         
+         <mdb-card>
+            <mdb-card-header style="color:blue; font-size:18px">Top 10 State with highest number of certified Artisans </mdb-card-header>
+           <mdb-container>
+            <mdb-bar-chart :data="barChartData" :options="barChartOptions" :width="600" :height="300"></mdb-bar-chart>
+          </mdb-container>
+        </mdb-card>
+                
           
-          <mdb-card cascade class="cascading-admin-card mt-3">
-            <div class="admin-up mt-1">
-             <h3><mdb-badge v-if="isAssesorLoading == false" style="background-color:#008751">{{assessorList.length}}</mdb-badge></h3>
-                  <b-spinner  v-if="isAssesorLoading" variant="warning" type="grow" label="Spinning"></b-spinner>
-            </div>
-            <mdb-card-body class="text-center">
-            <mdb-card-title>Assessors</mdb-card-title>
-            <b-link :to="{ name: 'assessor',params: {data: assessorDataSet}}"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
-          </mdb-card-body>
-          </mdb-card>
-
-          <mdb-card cascade class="cascading-admin-card mt-3">
-            <div class="admin-up mt-1">
-             <h3><mdb-badge v-if="isPostLoading == false" style="background-color:#008751">{{postList.length}}</mdb-badge></h3>
-                <b-spinner  v-if="isPostLoading" variant="warning" type="grow" label="Spinning"></b-spinner>
-            </div>
-            <mdb-card-body class="text-center">
-            <mdb-card-title>Puplications</mdb-card-title>
-            <b-link :to="{ name: 'publication', params: {data: null}}"><mdb-btn color="light-green" style="color:white">view</mdb-btn></b-link>
-          </mdb-card-body>
-          </mdb-card>
+         <mdb-card class="mt-2">
+            <mdb-card-header  style="color:blue; font-size:18px">Top 10 State with highest number of Assessors</mdb-card-header>
+           <mdb-container>
+              <mdb-line-chart :data="lineChartData" :options="lineChartOptions" :width="600" :height="300"></mdb-line-chart>
+          </mdb-container>
+        </mdb-card>
+                
+          
+         <mdb-card class="mt-2">
+           <mdb-card-header style="color:blue; font-size:18px">Top 10 Sectors</mdb-card-header>
+           <mdb-container>
+            <mdb-pie-chart :data="pieChartData" :options="pieChartOptions" :width="600" :height="300"></mdb-pie-chart>
+          </mdb-container>
+        </mdb-card>
+                
+         
         </mdb-col>
       </mdb-row>
-     
     </section>
-
 </template>
 <script>
 import {mapGetters, mapActions,mapState,mapMutations } from 'vuex'
@@ -433,6 +1141,7 @@ import { mdbNavbar, mdbMediaImage, mdbCarousel, mdbCarouselItem, mdbCarouselCapt
 export default {
   name: 'index',
   components: {
+     mdbLineChart,
     mdbListGroup,
     mdbListGroupItem,
     mdbBadge, 
@@ -499,6 +1208,7 @@ export default {
       artisanList:[],
       regulatorybodiesList:[],
       trainerList:[],
+      apprenticeList:[],
 
       slide:0,
       slide:null,
@@ -521,82 +1231,124 @@ export default {
       tab: 0,
     
    /*  Chart Data Set */
-   
-     polarChartData: {
-        labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
-        datasets: [
-          {
-            data: [300, 50, 100, 40, 120],
-            backgroundColor: ["rgba(247, 70, 74, 0.3)", "rgba(70, 191, 189, 0.3)", "rgba(253, 180, 92, 0.3)", "rgba(148, 159, 177, 0.3)", "rgba(77, 83, 96, 0.3)"],
-            hoverBackgroundColor: ["rgba(247, 70, 74, 0.4)", "rgba(70, 191, 189, 0.4)", "rgba(253, 180, 92, 0.4)", "rgba(148, 159, 177, 0.4)", "rgba(77, 83, 96, 0.4)"],
-          }
-        ]
-      },
-      polarChartOptions: {
-        responsive: false,
-        maintainAspectRatio: false,
-      },
-  
       pieChartData: {
-        labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
+        labels: ["Abuja", "Lagos", "Kano", "Kaduna", "Port Hacourt", "Imo", "Anambara", "Abia", "Enugu","Minna"],
         datasets: [
           {
-            data: [300, 50, 100, 40, 120],
-            backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
-            hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
-          }
-        ]
-      },
+            data: [40, 50, 10, 40, 20, 45, 67, 34, 15, 90],
+            backgroundColor: ["rgba(247, 70, 74, 0.3)", 
+                              'rgba(54, 162, 235, 0.4)',  
+                              'rgba(255, 206, 86, 0.6)',
+                              'rgba(75, 192, 192, 0.8)',
+                              'rgba(255, 99, 132, 0.3)', 
+                              "rgba(70, 191, 189, 0.3)", 
+                              "rgba(253, 180, 92, 0.3)", 
+                              "rgba(148, 159, 177, 0.3)", 
+                              'rgba(153, 102, 255, 0.9)',
+                              'rgba(255, 159, 64, 0.5)',
+                              "rgba(77, 83, 96, 0.3)"],
+            hoverBackgroundColor: [
+                                 "rgba(247, 70, 74, 0.4)", 
+                                  "rgba(70, 191, 189, 0.4)", 
+                                  "rgba(253, 180, 92, 0.4)", 
+                                  "rgba(148, 159, 177, 0.4)",
+                                  'rgba(0, 150, 136, 0.7)',
+                                    'rgba(76, 175, 80, 0.7)',
+                                    'rgba(205, 220, 57, 0.7)',
+                                    'rgba(255, 235, 59, 0.7)',
+                                    'rgba(255, 152, 0, 0.7)',
+                                    "rgba(77, 83, 96, 0.4)"],
+                                }
+                              ]
+                            },
       pieChartOptions: {
         responsive: false,
         maintainAspectRatio: false,
       },
 
-       barChartData: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-          ],
-          borderColor: [
-            'rgba(255,99,132,1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
-          borderWidth: 1,
-        }]
-      },
-      barChartOptions: {
-        responsive: false,
-        maintainAspectRatio: false,
-        scales: {
-          xAxes: [{
-            barPercentage: 1,
-            gridLines: {
-              display: true,
-              color: "rgba(0, 0, 0, 0.1)",
+      
+      barChartData: {
+          labels: ["Abuja", "Lagos", "Kano", "Kaduna", "Port Hacourt", "Imo", "Anambara", "Abia", "Enugu","Minna"],
+          datasets: [{
+            label: '#Artisans Percentage',
+            data: [12, 19, 3, 5, 2, 68, 46, 69, 25, 85,],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+               "rgba(70, 191, 189, 0.3)", 
+               "rgba(253, 180, 92, 0.3)", 
+              "rgba(148, 159, 177, 5)", 
+              'rgba(153, 102, 255, 0.6)',
+            ],
+            borderColor: [
+              'rgba(255,99,132,1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)',
+               'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+            ],
+            borderWidth: 1,
+          }]
+        },
+        barChartOptions: {
+          responsive: false,
+          maintainAspectRatio: false,
+          scales: {
+            xAxes: [{
+              barPercentage: 1,
+              gridLines: {
+                display: true,
+                color: "rgba(0, 0, 0, 0.1)"
+              }
+            }],
+            yAxes: [{
+              gridLines: {
+                display: true,
+                color: "rgba(0, 0, 0, 0.1)"
+              }
+            }]
+          }
+        },
+      lineChartData: {
+          labels: ["Abuja", "Lagos", "Kano", "Kaduna", "Port Hacourt", "Imo", "Anambara", "Abia", "Enugu","Minna"],
+          datasets: [
+            {
+              label: "# Assessors percentage",
+               backgroundColor: "rgba(255, 99, 132, 0.1)",
+              borderColor: "rgba(255, 99, 132, 1)",
+              borderWidth: 0.8,
+              data: [28, 48, 40, 19, 86, 27, 90, 35, 46, 68, 34,]
             }
-          }],
-          yAxes: [{
-            gridLines: {
-              display: true,
-              color: "rgba(0, 0, 0, 0.1)",
-            }
-          }],
+          ]
+        },
+        lineChartOptions: {
+          responsive: false,
+          maintainAspectRatio: false,
+          scales: {
+            xAxes: [{
+              gridLines: {
+                display: true,
+                color: "rgba(0, 0, 0, 0.1)"
+              }
+            }],
+            yAxes: [{
+              gridLines: {
+                display: true,
+                color: "rgba(0, 0, 0, 0.1)"
+              }
+            }]
+          }
         }
-      },
-    }
-        
+      };
   },
       mounted() {
     this.interval = setInterval(this.changeData, 2000);
@@ -609,9 +1361,10 @@ export default {
     this. createTrainers();
     this.createArtisans();
     this.createRegulatoryBodies();
+    this.createApprentice();
   },
     computed: {
-        ...mapGetters({isProviderLoading: 'provider/getProviderStatus', isCompanyLoading:'company/getCompanyStatus', isAssesorLoading:'assessors/getAssesorStatus', isPostLoading:'post/getPostStatus', isTraineeLoading:'trainees/getTraineeStatus', isTrainerLoading:'trainers/getTrainerStatus', isArtisanLoading:'artisans/getArtisanStatus', isRegulatoryBodyLoading:'regulatorybodies/getRegulatoryBodiesStatus' }),
+        ...mapGetters({isProviderLoading: 'provider/getProviderStatus', isCompanyLoading:'company/getCompanyStatus', isAssesorLoading:'assessors/getAssesorStatus', isPostLoading:'post/getPostStatus', isTraineeLoading:'trainees/getTraineeStatus', isTrainerLoading:'trainers/getTrainerStatus', isArtisanLoading:'artisans/getArtisanStatus', isRegulatoryBodyLoading:'regulatorybodies/getRegulatoryBodiesStatus', isApprenticeLoading:'apprentice/getApprenticeStatus'}),
         processProviders: function(){
               return this.providerList
         },
@@ -657,7 +1410,7 @@ export default {
         }        
     },
   methods: {
- ...mapActions({loadProviders: 'provider/loadProviders', loadCompanies:'company/loadCompanies', loadAssesors:'assessors/loadAssesors',  loadPosts:'post/loadPosts', loadTrainees:'trainees/loadTrainees', loadTrainers:'trainers/loadTrainers', loadArtisans:'artisans/loadArtisans', loadRegulatoryBodies:'regulatorybodies/loadRegulatoryBodies'  }),
+ ...mapActions({loadProviders: 'provider/loadProviders', loadCompanies:'company/loadCompanies', loadAssesors:'assessors/loadAssesors',  loadPosts:'post/loadPosts', loadTrainees:'trainees/loadTrainees', loadTrainers:'trainers/loadTrainers', loadArtisans:'artisans/loadArtisans', loadRegulatoryBodies:'regulatorybodies/loadRegulatoryBodies', loadApprentice:'apprentice/loadApprentice'  }),
       createProviders() {
           let self = this
           this.loadProviders().then(list => self.getExistingProviderList(list)).catch(function(error){console.log(error.message)});
@@ -737,9 +1490,17 @@ export default {
         },
       getExistingTrainerList(list){
         if(list){
-         //console.log('Trainee:'+JSON.stringify(list)) 
-         return this.trainerList = list
-        }
+         for(var i = 0; i < list.length; i++){
+               let objectList = list[i] 
+            for(var k = 0; k < objectList.trainerList.length; k++){
+                var object = objectList.trainerList[k]
+                object.id = objectList._id
+                this.trainerList.push(object)
+               }
+    
+            }
+          return this.trainerList
+       }
       },
 
       createTrainees() {
@@ -748,8 +1509,16 @@ export default {
         },
       getExistingTraineeList(list){
         if(list){
+        for(var i = 0; i < list.length; i++){
+            let objectList = list[i] 
+              for(var k = 0; k < objectList.traineeList.length; k++){
+                  var object = objectList.traineeList[k]
+                  object.id = objectList._id
+                this.traineeList.push(object)
+              }
+        }
          //console.log('Trainee:'+JSON.stringify(list)) 
-         return this.traineeList = list
+         return this.traineeList
         }
       },
 
@@ -773,6 +1542,25 @@ export default {
          //console.log('Bodies:'+JSON.stringify(list)) 
          return this.regulatorybodiesList= list
         }
+      },
+
+       createApprentice() {
+          let self = this
+          this.loadApprentice().then(list => self.getExistingApprenticeList(list)).catch(function(error){console.log(error.message)});
+        },
+      getExistingApprenticeList(list){
+        if(list){
+         for(var i = 0; i < list.length; i++){
+               let objectList = list[i] 
+            for(var k = 0; k < objectList.apprenticeList.length; k++){
+                var object = objectList.apprenticeList[k]
+                object.id = objectList._id
+                this.apprenticeList.push(object)
+               }
+    
+            }
+          return this.apprenticeList
+       }
       },
      
     changeCurrentComponent(newComponent) {
@@ -833,8 +1621,20 @@ export default {
 mdb-list-group > mdb-list-group-item{
   background-color: black;
 }
+
+.classic-admin-card .card-body p {
+  font-size: 20px;
+	color:black;
+ 
+  margin-bottom: 0;
+}
+
+li{
+  text-decoration: none; 
+}
 a{
   color:black;
+  text-decoration: none;
 }
 a:hover{
   color:blue;
@@ -842,39 +1642,7 @@ a:hover{
 a:active{
   color:blueviolet;
 }
-.cascading-admin-card {
-  margin: 20px 0;
-}
-.cascading-admin-card .admin-up {
-  margin-left: 4%;
-  margin-right: 4%;
-  margin-top: -20px;
-}
-.cascading-admin-card .admin-up .fas,
-.cascading-admin-card .admin-up .far {
-  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.2), 0 2px 13px 0 rgba(0, 0, 0, 0.19);
-  padding: 1.7rem;
-  font-size: 2rem;
-  color: #fff;
-  text-align: left;
-  margin-right: 1rem;
-  border-radius: 3px;
-}
-.cascading-admin-card .admin-up .data {
-  float: right;
-  margin-top: 2rem;
-  text-align: right;
-}
-.admin-up .data p {
-  font-size: 20px;
-}
-.admin-up1 .data1 p {
-  color: white;
-}
-.data{
 
-  font-size: 20px;
-}
 h4 {
   font-weight: bold;
 }
@@ -885,62 +1653,6 @@ h4 {
 .collapse-item {
   transition: all 0.5s;  
 }
-.gradient-card {
-  transition: 0.5s ease-in-out; 
-}
-.gradient-card.show {
-  margin-top: 20px;
-}
-.gradient-card .card-image {
-  display: inline-block;
-  width: 100%;
-  transition: 0.5s ease-in-out; 
-}
-.gradient-card.show .card-image {
-  width: 112px;
-  height: 112px;
-  margin-left: 20px;
-  margin-top: -20px;
-}
-.gradient-card .card-body {
-  padding: 0 1.25rem;
-}
-.collapse-content .fas.fa-heart:hover {
-  color: #f44336 !important;
-}
-.collapse-content .fas.fa-share-alt:hover {
-  color: #0d47a1 !important;
-}
-.card.weather-card .collapse-content a.collapsed:after {
-  content: 'Expand'; }
-
-.card.weather-card .collapse-content a:not(.collapsed):after {
-  content: 'Collapse'; }
-
-.card.chart-card .classic-tabs .nav.tabs-white li a {
-  color: #757575;
-  font-weight: 500;
-}
-.card.chart-card .classic-tabs .nav.tabs-white li a.active {
-  color: #673ab7;
-}
-
-.search {
-    width: 60%;
-    margin: 15px auto;
-}
-.has-search .form-control-feedback {
-    position: absolute;
-    display: block;
-    width: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #007851;
-}
-  .has-search .form-control {
-    padding-left: 2.375rem;
-}
 
 .wrapper {
    overflow-x: hidden;
@@ -949,23 +1661,9 @@ h4 {
 .gradient{
   padding-left: 2%;
   padding-right: 2%;
- 
 }
-  .logo{
-      padding-top: 1%;
-      padding-bottom: 2%;
-  }
- 
-  .logo1{
-    float:right;
-      padding-top: 1%;
-      padding-bottom: 2%;
-  }
-
-.bright{
-  color:white;
-  text-align: center;
-  padding-top: 4%;
+.carousal{
+padding-left: 1%;
 }
 .gradient1{
   padding-top:1%;
@@ -973,41 +1671,18 @@ h4 {
 .gradient2{
   padding-top:1%;
   padding-left:2%;
+  padding-right:1%;
+}
+.gradient4{
+  padding-top:1%;
+  padding-left:2%;
+  padding-right:1%;
 }
 
 p {
   font-family: "Georgia", Verdana, Geneva, Tahoma, sans-serif, serif;
 }
-.classic-admin-card .card-body {
-  color: #fff;
-  margin-bottom: 0;
-  padding: 0.9rem;
-}
-.classic-admin-card .card-body p {
-  font-size: 20px;
-  opacity: 0.7;
-  margin-bottom: 0;
-}
-.classic-admin-card .card-body h4 {
-  margin-top: 10px;
-}
-.pull-right{
-  float:right;
-}
 
-.classic-admin-card1 .card-body {
-  color: #fff;
-  margin-bottom: 0;
-  padding: 0.9rem;
-}
-.classic-admin-card1 .card-body p {
-  font-size: 20px;
-  opacity: 0.7;
-  margin-bottom: 0;
-}
-.classic-admin-card1 .card-body h4 {
-  margin-top: 10px;
-}
 * {
   box-sizing: border-box;
 }
@@ -1033,7 +1708,7 @@ p {
   /* For tablets: */
   .col-s-1 {width: 8.33%;}
   .col-s-2 {width: 16.66%;}
-  .col-s-3 {width: 25%;}
+  .col-3 {width: 25%;}
   .col-s-4 {width: 33.33%;}
   .col-s-5 {width: 41.66%;}
   .col-s-6 {width: 50%;}
