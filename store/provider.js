@@ -18,6 +18,7 @@ export const state = () => ({
   } 
   
   export const actions= {
+    
    loadProviders(vuexContext){
      let self = this
      return new Promise(function (resolve, reject){
@@ -31,6 +32,19 @@ export const state = () => ({
          reject(error.message) 
        })
      })
-    } 
+    },
+    getProviderDetails(vuexContext,_id){
+      let self= this
+      return new Promise(function (resolve, reject){
+        let herokuUrl = 'https://shielded-savannah-72922.herokuapp.com/api/center/'+_id;
+        self.$axios.$get(herokuUrl)
+         .then(function (response){
+          resolve(response)
+         })
+         .catch(function (error) {
+           reject(error.message)
+         });
+      })
+    }    
   
   }

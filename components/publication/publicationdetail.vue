@@ -6,7 +6,7 @@
        
             <div class="row">
             <div class="subtitle mt-5">
-                <h1>{{publicationData.title}}</h1>
+                <h3>{{publicationData.title}}</h3>
                   <hr/>
             </div>
              <img :src="publicationData.coverpage" width="800" class="img-fluid"/>
@@ -45,7 +45,7 @@
 
 
             <b-card class=" mt-5">
-               <b-card-title><h4 class="font-weight-bold">Newsletter</h4> </b-card-title>
+               <b-card-title><h5 class="font-weight-bold">Newsletter</h5> </b-card-title>
 
                <hr style="border-top: dotted 1px;" />
                 Subscribe to c-lmis to get the must-read publications & insights in your inbox.
@@ -124,18 +124,18 @@ ul {
   font-size: 15px;
 }
 h1{
-    font-size:50px;
+    font-size:24px;
     font-family: 'Times New Roman', Times, serif;
     font-weight:bold;
 }
 
 h5{
-  font-size:20px;
+  font-size:16px;
     font-family: 'Times New Roman', Times, serif;
     font-weight:bold;  
 }
 p{
-    font-size:16px;
+    font-size:14px;
     font-family:Arial, Helvetica, sans-serif;
 }
 .gradient{
@@ -148,7 +148,7 @@ p{
 }
 
 .subtitle{
-    font-size: 30px;
+    font-size: 20px;
 }
 .date{
     font-style: italic;

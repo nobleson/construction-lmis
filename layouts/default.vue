@@ -8,7 +8,7 @@
                 <span class="email-info">Email : <a href="mailto:c-lmis2019@corbon.gov.ng" >c-lmis2019@corbon.gov.ng </a> </span>
                 </div>
               <div class="float-left ">
-                <h6>Contacts: 070678493843, 070686578479, 09067475846</h6>
+                <h6 style="font-size: 14px;">Contacts: 070678493843</h6>
                 </div>
             </div>
         </div>
@@ -43,30 +43,15 @@
         
     </b-navbar-toggle>
      <b-collapse id="nav" is-nav>
-    <b-navbar-nav class="ml-auto"  >
-        
+   <b-navbar-nav class="ml-auto"  >
         <b-nav-item  ></b-nav-item>
-        <b-nav-item class="active" :to="{ name: 'index'}" style="font-size:18px"><span class="text-white">Home</span></b-nav-item>
-        <b-nav-item :to="{ name: 'publication',params: {data: null}}" style="font-size:18px"><span class="text-white">Publications</span></b-nav-item>
-        <b-nav-item :to="{ name: 'company',params: {data: null}}" style="font-size:18px"><span class="text-white">Companies</span></b-nav-item>
-        
-        <b-nav-item-dropdown right>
-          <!-- Using 'button-content' slot -->
-          <template slot="button-content" style="font-size:20px"><span class="text-white" style="font-size:20px">Training Providers</span></template>
-              <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item :to="{ name: 'provider',params: {data: null}}"><span style="font-size:18px">Providers Detail</span></b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item :to="{ name: 'trainer',params: {data: null}}"> <span style="font-size:18px">Trainers</span></b-dropdown-item>
-             <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item :to="{ name: 'trainee',params: {data: null}}"><span style="font-size:18px">Trainees</span></b-dropdown-item>
-             <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item :to="{ name: 'artisan',params: {data: null}}"><span style="font-size:18px">Artisans</span></b-dropdown-item>
-        </b-nav-item-dropdown>
-        
-
-        <b-nav-item :to="{ name: 'regulatorybody',params: {data: null}}" ><span class="text-white" style="font-size:20px">Regulatory Bodies</span></b-nav-item>
-
-
+        <b-nav-item class="active" :to="{ name: 'index'}" style="font-size:14px"><span class="text-white">Home</span></b-nav-item>
+        <b-nav-item :to="{ name: 'publication',params: {data: null}}" style="font-size:14px"><span class="text-white">Publications</span></b-nav-item>
+        <b-nav-item :to="{ name: 'company',params: {data: null}}" style="font-size:14px"><span class="text-white">Companies</span></b-nav-item>
+        <b-nav-item :to="{ name: 'provider',params: {data: null}}" style="font-size:14px"><span class="text-white">Training Providers</span></b-nav-item>
+        <b-nav-item :to="{ name: 'assessor',params: {data: null}}" style="font-size:14px"><span class="text-white">Assessors</span></b-nav-item>
+        <b-nav-item  style="font-size:14px" ><span class="text-white">Artisans</span></b-nav-item>
+        <b-nav-item  style="font-size:14px" ><span class="text-white">Jobs</span></b-nav-item>
       </b-navbar-nav>
         </b-collapse>
   </b-navbar>
@@ -158,7 +143,7 @@
   </div>
 </template>
 <script>
-import { mdbFooter, mdbContainer, mdbRow, mdbCol,} from 'mdbvue';
+import { mdbFooter, mdbContainer, mdbRow, mdbCol, mdbNavbar, mdbNavbarToggler, mdbNavbarNav, mdbNavItem} from 'mdbvue';
 export default {
   
   components: {
@@ -166,6 +151,11 @@ export default {
     mdbContainer,
     mdbRow,
     mdbCol,
+    mdbNavbar,
+    mdbNavbarToggler,
+    mdbNavbarNav,
+    mdbNavItem
+
     
   },
   
@@ -216,7 +206,25 @@ input[type=email] {
 h4 {
   font-weight: bold;
 }
+.link {
+  font-size:14px;
+  color: #ffffff; 
+}
+.link:link {
+  text-decoration: none;
+}
 
+b-nav-item:visited {
+  text-decoration: none;
+}
+
+b-nav-item:hover {
+  text-decoration: underline;
+}
+
+b-nav-item:active {
+  text-decoration: underline;
+}
 
 .wrapper {
    overflow-x: hidden;
@@ -229,14 +237,22 @@ li:hover {
   cursor: pointer;
 
 }
-a:active {
-    color: blue;
-}
 li:visited{
    color:white;
 }
-
-a:link{
+a:active {
+    color: blue;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a{
+  text-decoration: none;
+  font-size:14px;
   color:white;
 }
 ul{

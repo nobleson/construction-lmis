@@ -3,14 +3,13 @@
   <div class="row justify-content-md-center mt-3">
     <div class="col-md-6">
         
-        <h1>Publications</h1>
         <br>
           <div>
             <ul class="list-unstyled">
               <b-media tag="li" v-for="post in postList" :key="post.id">
                 <img slot="aside" :src="post.coverpage" width="200" height="200" alt="Media Aside">
                 <h5 class="mt-0 mb-1">{{post.title}}</h5>
-                  <b-button variant="success"   @click="$emit('changeComponent',{component: 'publicationDetail', data: post})" class="">Read More ...</b-button>
+                  <b-button variant="success" size="sm"   @click="$emit('changeComponent',{component: 'publicationDetail', data: post})" class="">Read More ...</b-button>
               </b-media>
             </ul>
           </div>

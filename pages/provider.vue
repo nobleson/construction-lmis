@@ -6,12 +6,12 @@
 
 <script>
 
-import providerView from '~/components/provider/providerView.vue'
-import providerDetail from '~/components/provider/providerDetail.vue'
+import ProviderView from '~/components/provider/providerView.vue'
+import ProviderDetail from '~/components/provider/providerDetail.vue'
 export default {
   components: {
-    providerView,
-    providerDetail,
+    ProviderView,
+    ProviderDetail,
     
   },
   data() {
@@ -24,10 +24,10 @@ export default {
    mounted(){
     var data = this.$route.params.data
     if(data == null){
-      this.currentComponent = 'providerView'
+      this.currentComponent = 'ProviderView'
     }else{
       this.currentproviderData = data
-       this.currentComponent = 'providerDetail'
+       this.currentComponent = 'ProviderDetail'
     }
   },
   

@@ -2,15 +2,15 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
-const _13356cb5 = () => interopDefault(import('..\\pages\\artisan.vue' /* webpackChunkName: "pages_artisan" */))
-const _60843c5c = () => interopDefault(import('..\\pages\\assessor.vue' /* webpackChunkName: "pages_assessor" */))
-const _eff4f010 = () => interopDefault(import('..\\pages\\company.vue' /* webpackChunkName: "pages_company" */))
-const _0d142506 = () => interopDefault(import('..\\pages\\provider.vue' /* webpackChunkName: "pages_provider" */))
-const _3365d6b2 = () => interopDefault(import('..\\pages\\publication.vue' /* webpackChunkName: "pages_publication" */))
-const _902cdde2 = () => interopDefault(import('..\\pages\\regulatorybody.vue' /* webpackChunkName: "pages_regulatorybody" */))
-const _1cefdaa3 = () => interopDefault(import('..\\pages\\trainee.vue' /* webpackChunkName: "pages_trainee" */))
-const _1da70c30 = () => interopDefault(import('..\\pages\\trainer.vue' /* webpackChunkName: "pages_trainer" */))
-const _9b3082e6 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
+const _e5cac7c2 = () => interopDefault(import('..\\pages\\artisan.vue' /* webpackChunkName: "pages_artisan" */))
+const _2344fa32 = () => interopDefault(import('..\\pages\\assessor.vue' /* webpackChunkName: "pages_assessor" */))
+const _01eab762 = () => interopDefault(import('..\\pages\\company.vue' /* webpackChunkName: "pages_company" */))
+const _60563a48 = () => interopDefault(import('..\\pages\\provider.vue' /* webpackChunkName: "pages_provider" */))
+const _fc4f01de = () => interopDefault(import('..\\pages\\publication.vue' /* webpackChunkName: "pages_publication" */))
+const _c643d336 = () => interopDefault(import('..\\pages\\regulatorybody.vue' /* webpackChunkName: "pages_regulatorybody" */))
+const _d255ebe6 = () => interopDefault(import('..\\pages\\trainee.vue' /* webpackChunkName: "pages_trainee" */))
+const _d0e788cc = () => interopDefault(import('..\\pages\\trainer.vue' /* webpackChunkName: "pages_trainer" */))
+const _0bc5c077 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 
 Vue.use(Router)
 
@@ -88,39 +88,39 @@ export function createRouter() {
 
     routes: [{
       path: "/artisan",
-      component: _13356cb5,
+      component: _e5cac7c2,
       name: "artisan"
     }, {
       path: "/assessor",
-      component: _60843c5c,
+      component: _2344fa32,
       name: "assessor"
     }, {
       path: "/company",
-      component: _eff4f010,
+      component: _01eab762,
       name: "company"
     }, {
       path: "/provider",
-      component: _0d142506,
+      component: _60563a48,
       name: "provider"
     }, {
       path: "/publication",
-      component: _3365d6b2,
+      component: _fc4f01de,
       name: "publication"
     }, {
       path: "/regulatorybody",
-      component: _902cdde2,
+      component: _c643d336,
       name: "regulatorybody"
     }, {
       path: "/trainee",
-      component: _1cefdaa3,
+      component: _d255ebe6,
       name: "trainee"
     }, {
       path: "/trainer",
-      component: _1da70c30,
+      component: _d0e788cc,
       name: "trainer"
     }, {
       path: "/",
-      component: _9b3082e6,
+      component: _0bc5c077,
       name: "index"
     }],
 

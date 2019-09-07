@@ -25,7 +25,7 @@ export default {
     if(data == null){
       this.currentComponent = 'companiesView'
     }else{
-      this.currentpublicationData = data
+      this.currentcompanyData = data
        this.currentComponent = 'companiesDetail'
     }
   },
